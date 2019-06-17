@@ -1,0 +1,150 @@
+<html>
+<head>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+    "h h h h h h h h h h h h"
+    "n n n n n n n n n n n n"
+    "i i i i i i i i i i i i"
+    "m m m m c c c g g g g g"
+    "f f f f f f f f f f f f "
+}
+        .header{
+            grid-area: h;
+            background-color: aliceblue;
+            color:rgb(43, 65, 43);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            text-align: center;
+            font-style:oblique; 
+            font-weight: bolder; 
+        }
+        .nav{
+           overflow: hidden;
+           grid-area: n;
+
+        }
+        .nav a:hover{
+                color:white;
+                background-color:rgb(95, 124, 95);
+        }
+        .nav a{
+            color:black;
+            float:left;
+            background-color:white;
+            text-align: center;
+            text-decoration: none;
+            padding:15px 20px;
+            font-size:17px;
+            text-transform: capitalize;
+            border-right: 4px solid gray;
+        }
+        .img1{
+            float:center;
+            height:100px;
+            width:100px;
+ }
+ .image{
+    background-color: aliceblue;
+     grid-area: i;
+
+ }
+ .menu{
+    margin-top: 15px;
+    background-color:rgb(95, 124, 95);
+     grid-area: m;
+     color:white;
+     padding:10px;
+     }
+
+     .column {
+        margin-top: 15px;
+        background-color:rgb(95, 124, 95);
+    grid-area: c;
+    color:white;
+    width:100%;
+    float:left;
+    padding:10px;}
+
+    .column a{
+        background-color:rgb(95, 124, 95);
+    text-decoration: none;
+    color:white;
+    text-transform: capitalize;
+     }
+.gr{
+    background-color:rgb(95, 124, 95);
+         margin-top: 15px;
+         grid-area: g;
+         width:100%;
+         font-size: 20px;
+         font-weight: bolder;
+         color:white;
+     }
+     .footer{
+         grid-area: f;
+         text-align: center;
+         color:white;
+         background-color:rgb(95, 124, 95);
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <img class="img1" src="logo.png"> 
+        <p>AYURVEDIC PRODUCT</p>
+        </div>
+    <div class="nav">
+        <a href="#home">home</a>
+        <a href="https://www.biotique.com/skin-care.html" target=_blank>skincare</a>
+        <a href="https://www.biotique.com/baby.html" target=_blank>baby&kids</a>
+        <a href="https://www.biotique.com/hair-care.html" target=_blank>hair care</a>
+        <a href="https://www.biotique.com/mens.html" target=_blank>mens</a>
+        <a href="https://www.biotique.com/about-us" target=_blank>about us</a>
+        <a style="float:right;border-left: 4px solid gray; border-right:none" href="https://www.biotique.com/hotel-spa" target=_blank>hotels</a>
+  </div>
+    <div class= "image">
+        <marquee>
+<img src="img2.jpg" height=200px width=400px/>
+<img src="img3.jpg" height=200px width=400px/>
+<img src="img4.jpg" height=200px width=400px/>
+<img src="img1.jpg" height=200px width=400px/>
+        </marquee>
+    </div>
+    <div class="menu">
+            <h1>CUSTOMER CARE</h1> <br><h3>1800-103-9825</h3><br>
+            <h1>ONLINE ORDER</h1><br><h3>1800-103-9825<br>+91-9910409734<br>contact@biotique.com<br>Timings: 9:30 a.m till 5:00 p.m IST (Mon-Fri)</h3><br>
+    </div>
+        <div class="column">
+            <h1>COLLECTIONS</h1><br>
+        <a href="https://www.biotique.com/skin-care.html" target=_blank>skincare</a><br>
+        <a href="https://www.biotique.com/baby.html" target=_blank>baby&kids</a><br>
+        <a href="https://www.biotique.com/hair-care.html" target=_blank>hair care</a><br>
+        <a href="https://www.biotique.com/mens.html" target=_blank>mens</a><br>
+        <a href="https://www.biotique.com/fragrence.html" target=_blank>fragrence</a><br>
+           <h1> CORPORATE</h1>
+        <a href="https://www.biotique.com/corporate-gifting/" target=_blank>corporate-gifting</a><br>
+        <a href="https://www.biotique.com/press-news/" target=_blank>media</a><br>
+        <a href="https://www.biotique.com/storelocator/" target=_blank>store locator</a><br>
+        <a href="https://www.biotique.com/promotion-details/" target=_blank>promotion</a><br>
+        </div>  
+        <div class="gr">
+            <p>BIOTIQUE is synonymous with serious skin and hair care developed from Ayurveda. Biotique treatments do not cover up problems - they eliminate them. With 100% botanicals. No animal testing. 
+                Even the packaging is eco-friendly and recyclable.</p>
+       <p>Today, Biotique personifies the ultimate in authentic Indian traditional medicine, advanced by cutting edge Swiss biotechnology—a beauty legacy built on product purity, sustainability, universality, pioneering research, development and manufacturing for over 25 years.
+       </p><p> With 100% natural botanicals. No chemicals. No preservatives. No animal testing. All in eco-friendly and recyclable packaging. Dermatologist Tested For Safety.</p>
+            </div>  
+<div class="footer">
+    <p>Worldwide Copyright © Bio Veda Action Research Co. (brand owners of Biotique). All rights reserved.</p>
+</div>
+    </div>
+</body>
+</html>

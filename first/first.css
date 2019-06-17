@@ -1,0 +1,36 @@
+<html>
+<style>
+h1{
+font-style:oblique;
+font-weight:bold;
+color:red;
+}
+p{
+font-style:italic;
+}
+
+div{
+display:flex;
+}
+
+.img1,.img2,.img3,.img4{
+float:left;
+padding:5px;
+}
+
+.id1, .id2,.id3,.id4{
+padding:5px;
+margin:25px;
+border:0.5em solid black;
+}
+
+
+.clearfix{
+overflow:auto;
+flex-direction:column;
+}
+
+
+
+</style>
+</html>

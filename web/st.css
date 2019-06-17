@@ -1,0 +1,76 @@
+<html>
+<style>
+body {
+  color: blue;
+}
+h1{
+color: red;
+}
+
+h2{
+color: green;
+}
+p{
+color: darkblue;
+}
+h3{
+color: grey;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+}
+
+.left {
+  left: 0;
+  background-color: white;
+
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+
+.container{
+width:500px;
+margin:auto;
+border:15px solid red;
+border-radius: 1em;
+background-color:grey;
+font-family:sans-serif;
+font-weight: bold;
+background-color:pink;
+display:flex;
+flex-direction:column;
+padding:10px;
+}
+button{
+padding-top: 10px;
+margin: 2em auto;
+border-radius: 0.2em;
+background-color: purple;
+font-family:sans-serif;
+font-weight: bold;
+font-size: 23px;
+}
+.user{
+margin-bottom: 20px;
+margin-left: 46px;
+text-align: center;
+}
+.pas{
+margin-bottom: 20px;
+margin-left: 46px;
+text-align: center;
+}
+</style>
