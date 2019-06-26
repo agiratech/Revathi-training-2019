@@ -1,0 +1,443 @@
+.container{
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "a b d c c f"
+    "e e e e e e"
+    "h h h h h g"
+    "i i j j k k"
+    "l l m m n n";
+}
+.menu{
+    grid-area:a;
+    height:auto;
+    width:30px;
+    margin-left:40px;
+    margin-top:30px;
+    margin-right:0px;
+    cursor: pointer;
+    opacity:0.3;
+}
+.keep{
+    grid-area:b;
+    height:auto;
+    width:50px;
+    margin-left:-30px;
+    margin-top:20px;
+}
+.p{
+    grid-area:b;
+    font-size:30px;
+    text-transform: capitalize;
+    margin-left:23px;
+
+}
+.search-text{
+    grid-area:d;
+    position:relative;
+    border-radius: 10px;
+    border-top:thin solid  #e5e5e5;
+    border-right:thin solid #e5e5e5;
+    border-bottom:0;
+    border-left:thin solid  #e5e5e5;
+    box-shadow:0px 1px 2px 1px #e5e5e5;
+    height:40px;
+    margin-top:20px;
+    margin-right:100px;
+    outline:0;
+    padding:.4em 0 .4em .6em; 
+    width:600px; 
+    font-size:20px;
+}
+::placeholder{
+    font-size:20px;
+    padding-left:40px;
+    padding-top:5px;
+}
+.search{
+    position:absolute;
+    left:250px;
+    top: 42px;
+    opacity:0.3;
+}
+.refresh{
+    grid-area:c;
+    position: absolute;
+    width:30px;
+    right:350px;
+    top: 42px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.list:hover,.setting:hover,.refresh:hover,.search:hover,
+.close:hover, .menu:hover,.brush:hover,.checkbox:hover,.gallery:hover{
+     opacity:1;
+
+}
+.list{
+    position: absolute;
+    grid-area:c;
+    width:30px;
+    right:300px;
+    top: 42px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.setting{
+    position: absolute;
+    grid-area:c;
+    width:30px;
+    right:250px;
+    top: 42px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.logo{
+    grid-area:f;
+    width:100px;
+    height:auto;
+    border-radius:50%;
+}
+.line{
+  grid-area:e;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  position: absolute;
+  top: 115px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 10px;
+    top:120px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .close{
+    position:absolute; 
+    opacity: 0.3 ;
+    top:10px; 
+    right:20px; 
+    cursor: pointer;
+  }
+  
+  .sidenav a:hover {
+    background-color:lightgray;
+    border-radius: 5em;
+    color:black;
+  }
+.takenotes{
+    grid-area:h;
+    margin-left:350px;
+    margin-top:-100px;
+
+}
+.task{
+    border-radius: 10px;
+    border-top:thin solid  #e5e5e5;
+    border-right:thin solid #e5e5e5;
+    border-bottom:0;
+    border-left:thin solid  #e5e5e5;
+    box-shadow:0px 1px 3px 1px  lightgray;
+    background-color:whitesmoke;
+    height:35px;
+    margin:20px;
+    outline:0;
+    padding:.4em 0 .4em .6em; 
+    width:650px;
+    font-size:20px;
+}
+.checkbox{
+    position: absolute;
+    grid-area:g;
+    top:185px;
+    right:400px;
+    opacity: 0.4;
+}
+.brush{
+    position: absolute;
+    grid-area:g;
+    top:185px;
+    right:350px;
+    opacity: 0.4;
+}
+.gallery{
+    position: absolute;
+    grid-area:g;
+    top:185px;
+    right:300px;
+    opacity: 0.4;
+}
+.notes1{
+    grid-area:i;
+    border:1px solid lightgrey;
+    margin-top:-80px;
+    margin-left:260px;
+    height:150px;
+    width:300px;
+    font-size:20px;
+    border-radius:20px;
+}
+.notes2{
+    grid-area:j;
+    border:1px solid lightgrey;
+    margin-top:-80px;
+    margin-left:360px;
+    height:150px;
+    width:300px;
+    border-radius:20px;
+}
+.notes3{
+    grid-area:k;
+    border:1px solid lightgrey;
+    margin-top:-80px;
+    margin-left:-150px;
+    height:150px;
+    width:300px;
+    border-radius:20px;
+}
+.notes4{
+    grid-area:l;
+    border:1px solid lightgrey;
+    margin-left:260px;
+    margin-top:-30px;
+    height:150px;
+    width:300px;
+    border-radius:20px;
+}
+.notes5{
+    grid-area:m;
+    border:1px solid lightgrey;
+    margin-left:360px;
+    margin-top:-30px;
+    height:150px;
+    width:300px;
+    border-radius:20px;
+}
+.notes6{
+    grid-area:n;
+    border:1px solid lightgrey;
+    margin-left:-150px;
+    margin-top:-30px;
+    height:150px;
+    width:300px;
+    border-radius:20px;
+}
+.para{
+    font-size:20px;
+    margin:10px;
+}
+.notes1 .alert,.paint,.person,.gal,.archive,.more{
+   margin-top:60px;
+   margin-right:10px;
+   margin-left:10px;
+   opacity: 0;
+}
+.notes1 .pin{
+    position:absolute;
+    margin-top:-40px;
+    margin-left:270px;
+    opacity:0;
+}
+.notes1 .select{
+    position: absolute;
+    margin-top:-50px;
+    margin-left:-10px;
+    opacity:0;
+}
+.notes1:hover img{
+opacity: 1;
+}
+.notes2 .alert,.paint,.person,.gal,.archive,.more{
+    margin-top:60px;
+    margin-right:10px;
+    margin-left:10px;
+    opacity: 0;
+ }
+ .notes2 .pin{
+     position:absolute;
+     margin-top:-40px;
+     margin-left:270px;
+     opacity:0;
+ }
+ .notes2 .select{
+     position: absolute;
+     margin-top:-50px;
+     margin-left:-10px;
+     opacity:0;
+ }
+ .notes2:hover img{
+ opacity: 1;
+ }
+ .notes3 .alert,.paint,.person,.gal,.archive,.more{
+    margin-top:60px;
+    margin-right:10px;
+    margin-left:10px;
+    opacity: 0;
+ }
+ .notes3 .pin{
+     position:absolute;
+     margin-top:-40px;
+     margin-left:270px;
+     opacity:0;
+ }
+ .notes3 .select{
+     position: absolute;
+     margin-top:-50px;
+     margin-left:-10px;
+     opacity:0;
+ }
+ .notes3:hover img{
+ opacity: 1;
+ }
+ .notes4 .alert,.paint,.person,.gal,.archive,.more{
+    margin-top:60px;
+    margin-right:10px;
+    margin-left:10px;
+    opacity: 0;
+ }
+ .notes4 .pin{
+     position:absolute;
+     margin-top:-40px;
+     margin-left:270px;
+     opacity:0;
+ }
+ .notes4 .select{
+     position: absolute;
+     margin-top:-50px;
+     margin-left:-10px;
+     opacity:0;
+ }
+ .notes4:hover img{
+ opacity: 1;
+ }
+ .notes5 .alert,.paint,.person,.gal,.archive,.more{
+    margin-top:60px;
+    margin-right:10px;
+    margin-left:10px;
+    opacity: 0;
+ }
+ .notes5 .pin{
+     position:absolute;
+     margin-top:-40px;
+     margin-left:270px;
+     opacity:0;
+ }
+ .notes5 .select{
+     position: absolute;
+     margin-top:-50px;
+     margin-left:-10px;
+     opacity:0;
+ }
+ .notes5:hover img{
+ opacity: 1;
+ }
+ .notes6 .alert,.paint,.person,.gal,.archive,.more{
+    margin-top:60px;
+    margin-right:10px;
+    margin-left:10px;
+    opacity: 0;
+ }
+ .notes6 .pin{
+     position:absolute;
+     margin-top:-40px;
+     margin-left:270px;
+     opacity:0;
+ }
+ .notes6 .select{
+     position: absolute;
+     margin-top:-50px;
+     margin-left:-10px;
+     opacity:0;
+ }
+ .notes6:hover img{
+ opacity: 1;
+ }
+
+ .notes1:hover, .notes2:hover,.notes3:hover,.notes4:hover,.notes5:hover,.notes6:hover{
+    box-shadow: 5px 5px 5px #aaaaaa;
+ }
+
+ @media only screen and (max-width:640px) {
+    .container{
+        width:100%;
+    }
+    .menu{
+        position:absolute;
+        left:-25px;
+        top:15px;
+    }
+    .p{
+        font-size:25px;
+        margin-left:0px;
+        margin-top:40px;
+    }
+    .keep{
+        height:64px;
+        width:55px;
+        margin-left:53px;
+    }
+    .refresh{
+        right:96px;
+    }
+    .list{
+        right:134px;
+    }
+    .setting{
+        right:60px;
+    }
+    .list, .refresh,.setting{
+        width:30px;
+        position: absolute;
+    }
+    .search-text{
+        display:none;
+    }
+    .search{
+        display:none;
+    }
+    .line{
+        top:89px;
+    }
+    .logo{
+        width:54px;
+        height:60px;
+        position: absolute;
+        right:5px;
+        top:20px;
+    }
+    .takenotes{
+        margin-top:-160px;
+        margin-left:-19px;
+    }
+    .task{
+        width:340px;
+    }
+    .checkbox{
+        top:125px;
+        right:15px;
+    }
+    .brush{
+        top:125px;
+        right:50px;
+    }
+    .gallery{
+        top:125px;
+        right:85px;
+    }
+ }
