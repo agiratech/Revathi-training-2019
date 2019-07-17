@@ -1,0 +1,77 @@
+<html>
+<head>
+<script language='JavaScript' type='text/JavaScript'>
+function start(){
+var x=document.getElementById('image').offsetTop;
+var y=document.getElementById('image').offsetLeft;
+if(x < 568 ){
+x= x + 1;
+document.getElementById('image').style.top= x + "px";
+}else if(y < 1170){
+y= y + 1;
+document.getElementById('image').style.left= y + "px";
+}
+}
+function timestart(){
+start();
+time=setTimeout(start,10);
+}
+function reset(){
+clearTimeout(time);
+document.getElementById('image').style.left= "500px";
+document.getElementById('image').style.top= "100px";
+}
+function stop(){
+clearTimeout(time);
+}
+function up() {
+var x=document.getElementById('image').offsetTop;
+x= x - 1;
+document.getElementById('image').style.top= x + "px";
+}
+function timeup(){
+up();
+time=setTimeout('timeup()',10);
+}
+function down() {
+var x=document.getElementById('image').offsetTop;
+x= x + 1;
+document.getElementById('image').style.top= x + "px";
+}
+function timedown(){
+down();
+time=setTimeout('timedown()',10);
+}
+function left() {
+var x=document.getElementById('image').offsetLeft;
+x= x - 1;
+document.getElementById('image').style.left= x + "px";
+}
+function timeleft(){
+left();
+time=setTimeout('timeleft()',10);
+}
+function right() {
+var x=document.getElementById('image').offsetLeft;
+x= x + 1;
+document.getElementById('image').style.left= x + "px";
+}
+function timeright(){
+right();
+time=setTimeout('timeright()',10);
+}
+
+</script>
+</head>
+<body >
+<img src="jer.png" id='image' style="position:absolute; left: 500; top: 100; height:100px;">
+<br><br><br>
+<input type=button onClick=timeup() value='up'>
+<input type=button onClick=timedown() value='down'>
+<input type=button onClick=timeleft() value='left'>
+<input type=button onClick=timeright() value='right'>
+<input type=button onClick=stop() value='stop'>
+<input type=button onClick=timestart() value='start'>
+<input type=button onClick=reset() value='reset'>
+</body>
+</html>

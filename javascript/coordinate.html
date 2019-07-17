@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type="text/javascript">
+    item = null;
+    mousex = 0;
+    mousey = 0;
+    elex = 0;
+    eley = 0;
+    function moveinit()
+      {
+        document.onmousemove = move;
+        document.onmouseup = stop;
+      }
+    function stop()
+      {
+        item = null;
+      }
+    function move(e)
+      {
+        mousex = document.all ? window.event.clientX : e.pageX;
+        mousey = document.all ? window.event.clientY : e.pageY;
+        if(item != null)
+        { 
+          item.style.left = (mousex - elex) + "px";
+          item.style.top = (mousey - eley) + "px";
+        }
+      } 
+    function moveitem(ele)
+      {
+            item = ele;
+        elex = mousex - item.offsetLeft;
+        eley = mousey - item.offsetTop;
+       
+      }
+    </script>
+    <style type="text/css">
+    body{
+        background-color: rgb(92, 243, 230);
+    }
+      #ele{
+        width: 300px;
+        height:250px;
+        position: relative;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body onload="moveinit()">
+    <div id="ele" onmousedown="moveitem(this);" >
+      <img src="jer.png" width="300px">
+    </div>
+  </body>
+</html>
