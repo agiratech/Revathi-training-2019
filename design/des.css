@@ -364,5 +364,28 @@ h2{
         text-align:center;
         padding:0;
   }
-  
+  .notes1{
+        margin-top:-185px;
+        margin-left:15px;
+  }
+  .notes2{
+      margin-left:15px;
+      margin-top:20px;
+  }
+  .notes3{
+    margin-left:15px;
+    margin-top:100px;
+  }
+  .notes4{
+    margin-left:15px;
+    margin-top:200px;
+  }
+  .notes5{
+    margin-left:15px;
+    margin-top:300px;
+  }
+  .notes6{
+    margin-left:15px;
+    margin-top:400px;
+  }
 }
