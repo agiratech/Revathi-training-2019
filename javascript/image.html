@@ -1,0 +1,46 @@
+<html>
+<head>
+<script type="text/javascript">
+var imge= null;
+function init(){
+    imge=document.getElementById("image");				
+    imge.style.position='relative';
+    imge.style.left='0px';
+    imge.style.top='0px';
+}
+function keypress(e){				
+	var key=e.which||e.keyCode;
+	switch(key){
+		case 37: 
+			left();
+			break;
+		case 38: 
+			up();
+			break;
+		case 39: 
+			right();
+			break;
+		case 40: 
+            down();
+			break;						
+	}
+}
+function left(){
+    imge.style.left=parseInt(imge.style.left)-10;
+}
+function up(){
+    imge.style.top=parseInt(imge.style.top)-10;
+}
+function right(){
+    imge.style.left=parseInt(imge.style.left)+10;
+}
+function down(){
+    imge.style.top=parseInt(imge.style.top)+10;
+}
+window.onload=init;
+</script>
+</head>
+<body onkeydown='keypress(event)'>
+    <img id="image" src="jer.png" height=100px>
+</body>
+</html>

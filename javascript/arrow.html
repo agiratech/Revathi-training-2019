@@ -4,25 +4,26 @@
 function start(){
 var x=document.getElementById('image').offsetTop;
 var y=document.getElementById('image').offsetLeft;
-if(x < 568 ){
+var scrx= screen.width;
+var scry=screen.height;
+if(x  <  scrx){
 x= x + 1;
 document.getElementById('image').style.top= x + "px";
-}else if(y < 1170){
+}else if( x == scrx){
 y= y + 1;
 document.getElementById('image').style.left= y + "px";
 }
 }
 function timestart(){
-start();
-time=setTimeout(start,10);
+ time=setInterval(start,10);
 }
 function reset(){
-clearTimeout(time);
+clearInterval(time);
 document.getElementById('image').style.left= "500px";
 document.getElementById('image').style.top= "100px";
 }
 function stop(){
-clearTimeout(time);
+clearInterval(time);
 }
 function up() {
 var x=document.getElementById('image').offsetTop;
@@ -30,8 +31,7 @@ x= x - 1;
 document.getElementById('image').style.top= x + "px";
 }
 function timeup(){
-up();
-time=setTimeout('timeup()',10);
+time=setInterval(up,10);
 }
 function down() {
 var x=document.getElementById('image').offsetTop;
@@ -39,8 +39,7 @@ x= x + 1;
 document.getElementById('image').style.top= x + "px";
 }
 function timedown(){
-down();
-time=setTimeout('timedown()',10);
+time=setInterval(down,10);
 }
 function left() {
 var x=document.getElementById('image').offsetLeft;
@@ -48,8 +47,7 @@ x= x - 1;
 document.getElementById('image').style.left= x + "px";
 }
 function timeleft(){
-left();
-time=setTimeout('timeleft()',10);
+time=setInterval(left,10);
 }
 function right() {
 var x=document.getElementById('image').offsetLeft;
@@ -57,8 +55,7 @@ x= x + 1;
 document.getElementById('image').style.left= x + "px";
 }
 function timeright(){
-right();
-time=setTimeout('timeright()',10);
+time=setInterval(right,10);
 }
 
 </script>
