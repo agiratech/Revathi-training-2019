@@ -1,0 +1,89 @@
+
+body {
+	margin: 0;
+}
+
+canvas {
+	display: block;
+}
+
+#toolbar {
+	width: 100%;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	background-color: #2f2f2f;
+	overflow: auto;
+}
+
+#colors {
+	position: relative;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: Verdana;
+	color: white;
+	white-space: nowrap;
+}
+
+#range , #eraser {
+	position: relative;
+	float: left;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: Verdana;
+	color: white;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+#myColor, #myRange {
+	cursor: pointer;
+}
+#erase{
+	font-size: 20px;
+	font-weight: 500;
+	font-family: Verdana;
+	color: white;
+}
+#brush{
+	position: relative;
+	float: left;
+	font-size: 20px;
+	font-family: Verdana;
+	font-weight: 500;
+	background-color: white;
+	color: #4f4f4f;
+	text-align: center;
+	cursor: pointer;
+}
+
+#brush {
+	margin-right: 20px;
+}
+
+#reset, #save {
+	position: relative;
+	float: right;
+	font-size: 20px;
+	font-family: Verdana;
+	font-weight: 500;
+	background-color: white;
+	color: #4f4f4f;
+	text-align: center;
+	cursor: pointer;
+}
+
+#reset {
+	height: 30px;
+	width: 70px;
+	margin-right: 15px;
+}
+
+#save {
+	height: 30px;
+	width: 63px;
+	margin-right: 10px;
+}
