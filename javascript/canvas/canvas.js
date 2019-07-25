@@ -93,47 +93,14 @@ function brushClick() {
 
 
 function eraserClick() {
-    // ctx.strokeStyle = "white";
-	// eraser.style.border = "2px solid red";
-	// brush.style.border = "none";
-	
-	// canvas.addEventListener("mousedown", brushDown, false);
-	// canvas.addEventListener("mousemove", brushMove, false);
-	// canvas.addEventListener("mouseup", brushUp, false);
 	var ers = document.getElementById("erase").value;
-	if (ers == '0' && ers <= '10'){
-		   ctx.clearRect(0, 0, 150, window.innerHeight);
-		}
-		if(ers > '10' && ers <= '20') {
-			ctx.clearRect(0, 0, 250, window.innerHeight);
-		}
-		if(ers > '20' && ers <= '30') {
-			ctx.clearRect(0, 0, 350, window.innerHeight);
-		}
-		if(ers > '30' && ers <= '40') {
-			ctx.clearRect(0, 0, 450, window.innerHeight);
-		} 
-		if (ers > '40' && ers <= '50'){
-			ctx.clearRect(0, 0, 550, window.innerHeight);
-		}
-		if (ers > '50' && ers <= '60'){
-			ctx.clearRect(0, 0, 650, window.innerHeight);
-		}
-		if (ers > '60' && ers <= '70'){
-			ctx.clearRect(0, 0, 750, window.innerHeight);
-		}
-		if (ers > '70' && ers <= '80'){
-			ctx.clearRect(0, 0, 850, window.innerHeight);
-		}
-		if (ers > '80' && ers <= '90'){
-			ctx.clearRect(0, 0, 950, window.innerHeight);
-		}
-	    if (ers == '100'){
-			ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-			}		
-
+		   ctx.clearRect(0, 0, ers, window.innerHeight);
+		   ctx.beginPath();
+   		   ctx.moveTo(ers,0);
+   		   ctx.lineTo(ers,window.innerHeight);
+   		   ctx.stroke();
+   		   ctx.closePath();
 }
-
 
 function resetclick() {
 	window.location.reload();
