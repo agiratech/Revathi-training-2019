@@ -1,0 +1,26 @@
+<div class="calculator">
+
+  <input type="text" class="display" [value]="current" disabled />
+
+  <div class="calculator-keys">
+    <button (click) = "getNumber('1')" value="1">1</button>
+    <button (click) = "getNumber('2')" value="2">2</button>
+    <button (click) = "getNumber('3')" value="3">3</button>
+    <button (click) = "getNumber('4')" value="4">4</button>
+    <button (click) = "getNumber('5')" value="5">5</button>
+    <button (click) = "getNumber('6')" value="6">6</button>
+    <button (click) = "getNumber('7')" value="7">7</button>
+    <button (click) = "getNumber('8')" value="8">8</button>
+    <button (click) = "getNumber('9')" value="9">9</button>
+    <button (click) = "getNumber('0')" value="0">0</button>
+    <button (click) = "getOperation('+')" value="+">+</button>
+    <button (click) = "getOperation('-')" value="-">-</button>
+    <button (click) = "getOperation('*')" value="*">*</button>
+    <button (click) = "getOperation('/')" value="/">/</button>
+    <button (click) = "getDecimal()" value=".">.</button>
+    <button (click) = "clear()" value="clear">clear</button>
+    <button (click) = "getOperation('=')" class="equal" value="=">=</button>  
+  </div>
+</div>
+
+<router-outlet></router-outlet>
