@@ -7,7 +7,7 @@ import { Component  } from '@angular/core';
 })
 export class AppComponent{
   title = 'calculator';
-  current = '0';
+  current = '0' ;
   first = null;
   operator = null;
   second = false;
@@ -18,9 +18,9 @@ export class AppComponent{
     {
       this.current = v;
       this.second = false;
-      
+
     }else{
-      this.current === '0'? this.current = v: this.current += v;
+      this.current === '0' ? this.current = v: this.current += v;
     }
   }
 
