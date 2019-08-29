@@ -1,0 +1,45 @@
+.div{
+    margin-top:0;
+}
+mat-icon{
+    padding:15px; 
+    opacity: .5;
+}
+label{
+    position: absolute;
+    font-size:22px;
+    font-family: 'Dosis', sans-serif;
+    opacity: .6;
+    top: 21px;
+    left: 99px;
+}
+.contactimage{
+    width:auto;
+    height:40px;
+    padding-top:10px;
+}
+.searchbar{
+    position: relative;
+    padding-right:15px;
+    margin-right: 70px;
+    margin-left: 160px;
+}
+input{
+    font-family: 'Dosis', sans-serif;
+    width: 700px;
+    height: 25px;
+    border-radius: 15px;
+    border: none;
+    background: #f1f3f4;
+    text-indent: 40px;
+    font-size: 22px;    
+    padding: 10px;
+    outline: none;
+}
+.searchicon{
+    position: absolute;
+    margin-top:13px;
+    left: 256px;
+    top: 4px;}
+
+
