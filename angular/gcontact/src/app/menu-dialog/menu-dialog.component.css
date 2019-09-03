@@ -1,0 +1,35 @@
+img{
+    width:55px;
+    opacity: .1;
+}
+td {
+    height:15px;
+    padding-right: 8px;
+    text-align: center;
+  }
+mat-icon{
+    opacity: .4;
+}
+.form{
+    width:100%;
+}
+.dialogbox{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    border-radius:10px;
+}
+.left{
+    float: left;
+    margin:5px;
+    color:#6153b0;
+
+}
+.right{
+float: right;
+margin:5px;
+padding-left:70px;
+text-align: center;
+color:#6153b0;
+
+}

@@ -1,15 +1,23 @@
 <div id="mySidenav" class="sidenav">
-<a routerLink="#"><mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;Contacts</a>
-<a routerLink="#"><mat-icon>history</mat-icon>&nbsp;&nbsp;&nbsp;Frequently contacted</a>
-<a routerLink="#"><mat-icon>business</mat-icon>&nbsp;&nbsp;&nbsp;Directory</a>
-<a routerLink="#"><mat-icon>filter_none</mat-icon>&nbsp;&nbsp;&nbsp;Duplicates</a>
+    <button mat-raised-button (click)="openDialog()">
+            <svg width="36" height="36" viewBox="0 0 36 36">
+                <path fill="#34A853" d="M16 16v14h4V20z"></path>
+                <path fill="#4285F4" d="M30 16H20l-4 4h14z"></path>
+                <path fill="#FBBC05" d="M6 16v4h10l4-4z"></path>
+                <path fill="#EA4335" d="M20 16V6h-4v14z"></path>
+                <path fill="none" d="M0 0h36v36H0z"></path>
+            </svg>Create contact</button>
+<li><mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;<span>Contacts</span></li>
+<li><mat-icon>history</mat-icon>&nbsp;&nbsp;&nbsp;<span>Frequently contacted</span></li>
+<li><mat-icon>business</mat-icon>&nbsp;&nbsp;&nbsp;<span>Directory</span></li>
+<li><mat-icon>filter_none</mat-icon>&nbsp;&nbsp;&nbsp;<span>Duplicates</span></li>
 <div style="border-bottom:1px solid lightgray;"></div>
-<a routerLink="#"><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;Labels</a>
-<a routerLink="#"><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;Create Label</a>
+<li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
+<li><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="labelbox()">Create Label</span></li>
 <div style="border-bottom:1px solid lightgray;"></div>
-<a routerLink="#"><mat-icon>import_contacts</mat-icon>&nbsp;&nbsp;&nbsp;Import</a>
-<a routerLink="#"><mat-icon>cloud_download</mat-icon>&nbsp;&nbsp;&nbsp;Export</a>
-<a routerLink="#"><mat-icon>print</mat-icon>&nbsp;&nbsp;&nbsp;Print</a>
+<li><mat-icon>import_contacts</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="importbox()">Import</span></li>
+<li><mat-icon>cloud_download</mat-icon>&nbsp;&nbsp;&nbsp;<span>Export</span></li>
+<li><mat-icon>print</mat-icon>&nbsp;&nbsp;&nbsp;<span>Print</span></li>
 <div style="border-bottom:1px solid lightgray;"></div>
-<a routerLink="#"><mat-icon>archive</mat-icon>&nbsp;&nbsp;&nbsp;Other contacts</a>
+<li><mat-icon>archive</mat-icon>&nbsp;&nbsp;&nbsp;<span>Other contacts</span></li>
 </div>   

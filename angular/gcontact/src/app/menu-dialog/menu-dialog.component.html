@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Create new contact</h1>
+<hr>
+<form class="dialogbox">
+<table class="form" cellspacing="0">
+<tr>
+<td> <img class="contactimage" src="../assets/dialog.png"></td>
+<td><mat-form-field><input matInput [(ngModel)]="data.Firstname" placeholder="First name" name="Firstname"></mat-form-field></td>
+<td><mat-form-field><input matInput [(ngModel)]="data.Lastname" placeholder="Last name" name="Lastname"></mat-form-field></td>
+</tr>
+<tr>
+<td><mat-icon>business</mat-icon></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="data.Company" placeholder="Company" name="Company"></mat-form-field></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="data.Job" placeholder="Job" name="Job"></mat-form-field></td>
+</tr></table>
+<table class="form">
+<tr>
+<td><mat-icon>mail_outline</mat-icon></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="data.Email" placeholder="Email" name="Email"></mat-form-field></td>
+</tr>
+<tr>
+<td><mat-icon>phone</mat-icon></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="data.Phone" placeholder="Phone" name="Phone"></mat-form-field></td>
+</tr>
+<tr>
+<td><mat-icon>note</mat-icon></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="data.Notes" placeholder="Notes" name="Notes"></mat-form-field></td>
+</tr>
+</table>
+</form>
+<hr>
+<div class="last">
+  <button mat-button class="left">More fields</button>
+  <button mat-button class="right"(click)="onNoClick()">Cancel</button>
+  <button mat-button class="right">Save</button>
+</div>

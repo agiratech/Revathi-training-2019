@@ -11,20 +11,31 @@
     transition: 0.3s;
     padding-top: 10px;
     }
-.sidenav a {
+.sidenav li {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 15px;
     display: block;
     transition: 0.3s;
-    color:black;
+    color:#1d1e20;
+
 }
-.sidenav a:hover {
+.sidenav li:hover {
     background-color:#f1f3f4;
     border-radius: 5em;
     color:black;
 }
-.sidenav a:active{
+.sidenav li:active{
     background-color: lightblue;
     color: #1a73e8;
+}
+button{
+    widows: 200px;
+    margin:20px;
+    border-radius:2em;
+    height:auto;
+    color: #5f6368;
+}
+mat-icon{
+    color:#5f6368;
 }
