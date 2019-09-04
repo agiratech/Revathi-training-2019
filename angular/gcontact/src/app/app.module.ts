@@ -12,8 +12,12 @@ import { DuplicateComponent } from './duplicate/duplicate.component';
 import { CreateComponent } from './create/create.component';
 import { MenuDialogComponent } from './menu-dialog/menu-dialog.component';
 import { FormsModule} from '@angular/forms';
-import { MatDialogModule} from '@angular/material';
 import { ImportComponent } from './import/import.component';
+import { ContactComponent } from './contact/contact.component';
+import { MatSidenav, MatSidenavContent, MatSidenavContainer} from '@angular/material/sidenav';
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { ImportComponent } from './import/import.component';
     CreateComponent,
     MenuDialogComponent,
     ImportComponent,
+    ContactComponent,
+    MatSidenav,
+    MatSidenavContent,
+    MatSidenavContainer
   ],
   imports: [
     BrowserModule,
@@ -33,11 +41,13 @@ import { ImportComponent } from './import/import.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    MatDialogModule,
+    
+    
   ],
   entryComponents:[
      MenuDialogComponent,
      CreateComponent,
+     ImportComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

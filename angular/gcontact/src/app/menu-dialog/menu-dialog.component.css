@@ -22,7 +22,7 @@ mat-icon{
 .left{
     float: left;
     margin:5px;
-    color:#6153b0;
+    
 
 }
 .right{
@@ -30,6 +30,6 @@ float: right;
 margin:5px;
 padding-left:70px;
 text-align: center;
-color:#6153b0;
+
 
 }

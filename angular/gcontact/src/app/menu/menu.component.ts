@@ -46,7 +46,7 @@ labelbox(): void{
 
 importbox(): void{
   const dialogRef = this.dialog.open(ImportComponent, {
-    width: '400px',
+    width: '450px',
   });
 
   dialogRef.afterClosed().subscribe(result => {

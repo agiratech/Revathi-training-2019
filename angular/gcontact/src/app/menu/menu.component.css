@@ -39,3 +39,6 @@ button{
 mat-icon{
     color:#5f6368;
 }
+mat-sidenav-content{
+    background-color: white;
+}
