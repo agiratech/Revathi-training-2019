@@ -42,3 +42,11 @@ mat-icon{
 mat-sidenav-content{
     background-color: white;
 }
+a{
+    text-decoration: none;
+    color:black;
+}
+span{
+    cursor: pointer;
+
+}

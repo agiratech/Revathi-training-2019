@@ -15,6 +15,7 @@ import { FormsModule} from '@angular/forms';
 import { ImportComponent } from './import/import.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatSidenav, MatSidenavContent, MatSidenavContainer} from '@angular/material/sidenav';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -33,7 +34,8 @@ import { MatSidenav, MatSidenavContent, MatSidenavContainer} from '@angular/mate
     ContactComponent,
     MatSidenav,
     MatSidenavContent,
-    MatSidenavContainer
+    MatSidenavContainer,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

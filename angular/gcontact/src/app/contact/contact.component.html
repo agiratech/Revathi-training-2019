@@ -1,3 +1,20 @@
 <div class="first">
     <a routerLink='/menu-dialog'>create contact</a>
 </div>
+
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNo</th>
+            <th><mat-icon>more_vert</mat-icon></th>
+        </tr>
+        <hr>
+        <tr *ngFor="let contact of contacts">
+            <td><img class="contactimage" src="../assets/download.png">{{contact.Firstname}}</td>
+            <td>{{contact.Email}}</td>
+            <td>{{contact.Phone}}</td>
+        </tr>
+    </table>
+</div>
