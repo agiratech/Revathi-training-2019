@@ -1,3 +1,71 @@
 img{
-    width:25px;
+    width:35px;
+}
+
+table {  
+    border: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th{
+    padding: 15px;
+    border-bottom: 1px solid black;
+    text-align: left;
+
+  }
+
+td {
+  text-align: left;
+}
+
+.image{
+  padding: 0px;
+  width:10%;
+}
+.name{
+  padding: 15px;
+}
+.head{
+  opacity: 1;
+}
+mat-icon{
+  opacity: 0;
+  padding:10px;
+  float:right;
+}
+
+ tr:hover mat-icon {
+   opacity:.5;
+ }
+ tr:hover mat-checkbox{
+   opacity:1;
+ }
+
+ tr:hover img{
+    opacity:0;
+ }
+
+ tr:hover{
+   background-color: #f1f3f4;
+ }
+
+ td{
+   position: relative;
+ }
+ td mat-checkbox{
+  position: absolute;
+  top:12px;
+  opacity:0;
+ }
+.firstline:hover{
+  background-color: white;
+}
+
+th{
+  color: #5f6368;
+  font-weight: normal;
 }

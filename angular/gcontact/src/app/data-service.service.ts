@@ -8,15 +8,13 @@ export class DataServiceService {
   constructor() { }
 
 contacts = [
-  {
-    "Firstname":"Reva",
-    "Lastname": "muthu",
-    "Company":"agire",
-    "Job": "software",
-    "Email": "revaa",
-    "Phone":  "123443454",
-    "Notes": "hi hello",
-}
+  {"Firstname": "reva", 
+  "Lastname" : "reva", 
+  "Company" : "hi",
+   "Job" : "rev",
+    "Email": "reyyyyyyyyyyy", 
+    "Phone": "1222345663", 
+    "Notes" : ""}
 ]
 
 public createcontact(contact : {Firstname, Lastname, Company, Job, Email, Phone, Notes}){

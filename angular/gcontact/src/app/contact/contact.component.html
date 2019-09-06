@@ -1,20 +1,22 @@
-<div class="first">
+<!-- <div class="first">
     <a routerLink='/menu-dialog'>create contact</a>
-</div>
+</div> -->
 
 <div>
     <table>
-        <tr>
-            <th>Name</th>
+        <tr class="firstline">
+            <th colspan="2">Name</th>
             <th>Email</th>
             <th>PhoneNo</th>
-            <th><mat-icon>more_vert</mat-icon></th>
+            <th><mat-icon class="head">more_vert</mat-icon></th>
         </tr>
-        <hr>
         <tr *ngFor="let contact of contacts">
-            <td><img class="contactimage" src="../assets/download.png">{{contact.Firstname}}</td>
-            <td>{{contact.Email}}</td>
-            <td>{{contact.Phone}}</td>
+            <td class="image"><img class="contactimage" src="../assets/download.png">
+            &nbsp;<mat-icon>drag_indicator</mat-icon><mat-checkbox color="primary"></mat-checkbox></td>
+            <td class="name">{{contact.Firstname}}</td>
+            <td class="name">{{contact.Email}}</td>
+            <td class="name">{{contact.Phone}}</td>
+            <td><mat-icon>more_vert</mat-icon><mat-icon>edit</mat-icon><mat-icon>star_border</mat-icon></td>
         </tr>
     </table>
 </div>

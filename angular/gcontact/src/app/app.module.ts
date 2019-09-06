@@ -14,7 +14,6 @@ import { MenuDialogComponent } from './menu-dialog/menu-dialog.component';
 import { FormsModule} from '@angular/forms';
 import { ImportComponent } from './import/import.component';
 import { ContactComponent } from './contact/contact.component';
-import { MatSidenav, MatSidenavContent, MatSidenavContainer} from '@angular/material/sidenav';
 import { LayoutComponent } from './layout/layout.component';
 
 
@@ -32,9 +31,6 @@ import { LayoutComponent } from './layout/layout.component';
     MenuDialogComponent,
     ImportComponent,
     ContactComponent,
-    MatSidenav,
-    MatSidenavContent,
-    MatSidenavContainer,
     LayoutComponent
   ],
   imports: [

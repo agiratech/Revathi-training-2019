@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatFormFieldModule,MatIconModule, MatInputModule } from '@angular/material';
 import { MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 
 const MaterialComponent=[
   MatButtonModule,
@@ -8,6 +12,8 @@ const MaterialComponent=[
   MatFormFieldModule,
   MatInputModule,
   MatDialogModule,
+  MatCheckboxModule,
+  MatSidenavModule
    ];
 
 @NgModule({

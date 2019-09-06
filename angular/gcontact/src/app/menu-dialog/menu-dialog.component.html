@@ -4,13 +4,13 @@
 <table class="form" cellspacing="0">
 <tr>
 <td> <img class="contactimage" src="../assets/dialog.png"></td>
-<td><mat-form-field><input matInput [(ngModel)]="contact.Firstname" placeholder="First name" name="Firstname"></mat-form-field></td>
-<td><mat-form-field><input matInput [(ngModel)]="contact.Lastname" placeholder="Last name" name="Lastname"></mat-form-field></td>
+<td><mat-form-field><input matInput [(ngModel)]="contact.Firstname" placeholder="First name" name="Firstname" required></mat-form-field></td>
+<td><mat-form-field><input matInput [(ngModel)]="contact.Lastname" placeholder="Last name" name="Lastname" required></mat-form-field></td>
 </tr>
 <tr>
 <td><mat-icon>business</mat-icon></td>
-<td><mat-form-field class="form"><input matInput [(ngModel)]="contact.Company" placeholder="Company" name="Company"></mat-form-field></td>
-<td><mat-form-field class="form"><input matInput [(ngModel)]="contact.Job" placeholder="Job" name="Job"></mat-form-field></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="contact.Company" placeholder="Company" name="Company" required></mat-form-field></td>
+<td><mat-form-field class="form"><input matInput [(ngModel)]="contact.Job" placeholder="Job" name="Job"  required></mat-form-field></td>
 </tr></table>
 <table class="form">
 <tr>
@@ -31,5 +31,5 @@
 <div class="last">
   <button mat-button color="primary" class="left">More fields</button>
   <button mat-button color="primary" class="right"(click)="onNoClick()">Cancel</button>
-  <button mat-button color="primary" class="right"(click)="createcontact()">Save</button>
+  <button type="submit" mat-button color="primary" class="right"(click)="createcontact()">Save</button>
 </div>
