@@ -7,11 +7,15 @@ export class DataServiceService {
 
   constructor() { }
 
+labels=[
+  {"name": "reva"}
+]
+
 contacts = [
   {"Firstname": "reva", 
   "Lastname" : "reva", 
   "Company" : "hi",
-   "Job" : "rev",
+  "Job" : "rev",
     "Email": "reyyyyyyyyyyy", 
     "Phone": "1222345663", 
     "Notes" : ""}
@@ -23,5 +27,12 @@ public createcontact(contact : {Firstname, Lastname, Company, Job, Email, Phone,
 
 public getContacts():Array<{Firstname, Lastname, Company, Job, Email, Phone, Notes}>{
   return this.contacts;
+}
+
+public createLabel(label :{name}){
+  this.labels.push(label);
+}
+public getlabel():Array<{name}>{
+  return this.labels;
 }
 }

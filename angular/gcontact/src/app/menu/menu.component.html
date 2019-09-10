@@ -12,8 +12,15 @@
 <li><mat-icon>business</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/directory'><span>Directory</span></a></li>
 <li><mat-icon>filter_none</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/duplicate'><span>Duplicates</span></a></li>
 <div style="border-bottom:1px solid lightgray;"></div>
-<li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
-<li><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="labelbox()">Create Label</span></li>
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
+       </mat-panel-title>
+    </mat-expansion-panel-header>
+       <li *ngFor="let label of labels"><mat-icon>label_outlined</mat-icon>&nbsp;&nbsp;&nbsp;<span>{{label.name}}</span></li>
+       <li><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="labelbox()">Create Label</span></li> 
+</mat-expansion-panel>
 <div style="border-bottom:1px solid lightgray;"></div>
 <li><mat-icon>import_contacts</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="importbox()">Import</span></li>
 <li><mat-icon>cloud_download</mat-icon>&nbsp;&nbsp;&nbsp;<span>Export</span></li>

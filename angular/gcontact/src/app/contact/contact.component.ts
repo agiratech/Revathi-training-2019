@@ -9,11 +9,13 @@ import{ DataServiceService} from '../data-service.service'
 export class ContactComponent implements OnInit {
    
   contacts;
+  count;
    
   constructor(public dataService: DataServiceService) { }
-
   ngOnInit() {
-    this.contacts = this.dataService.getContacts();    
+    this.contacts = this.dataService.getContacts();   
+    this.count = this.contacts.length;
+
   }
 
 }

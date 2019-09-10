@@ -1,1 +1,21 @@
-<p>directory works!</p>
+<div>
+        <table>
+            <tr class="firstline">
+                <th colspan="2">Name</th>
+                <th>Email</th>
+                <th>PhoneNo</th>
+                <th><mat-icon class="head">more_vert</mat-icon></th>
+            </tr>
+            <tr>
+                <span>Directory({{count}})</span>
+            </tr>
+            <tr *ngFor="let contact of contacts">
+                <td class="image"><img class="contactimage" src="../assets/download.png">
+                <mat-checkbox color="primary"></mat-checkbox></td>
+                <td class="name">{{contact.Firstname}}</td>
+                <td class="name">{{contact.Email}}</td>
+                <td class="name">{{contact.Phone}}</td>
+                <td><mat-icon>more_vert</mat-icon><mat-icon>edit</mat-icon></td>
+            </tr>
+        </table>
+    </div>

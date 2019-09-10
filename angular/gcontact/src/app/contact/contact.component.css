@@ -24,7 +24,7 @@ td {
 
 .image{
   padding: 0px;
-  width:10%;
+  width:5%;
 }
 .name{
   padding: 15px;
@@ -59,6 +59,7 @@ mat-icon{
  td mat-checkbox{
   position: absolute;
   top:12px;
+  left: 20px;
   opacity:0;
  }
 .firstline:hover{
@@ -68,4 +69,14 @@ mat-icon{
 th{
   color: #5f6368;
   font-weight: normal;
+}
+td .drag{
+  position: absolute;
+  /* opacity:0; */
+  left: -15px;
+  top:0px;
+}
+span{
+  color: #5f6368;
+  font-size: 12px;
 }

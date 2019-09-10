@@ -1,4 +1,4 @@
 <h1 mat-dialog-title>Create label</h1>
-<mat-form-field class="form"><input matInput [(ngModel)]="data.label" name="label"></mat-form-field>
+<mat-form-field class="form"><input matInput [(ngModel)]="label.name" name="label"></mat-form-field>
 <button mat-button color="primary" class="right"(click)="onNoClick()">Cancel</button>
-<button mat-button color="primary" class="right">Save</button>
+<button mat-button color="primary" class="right"(click)="createLabel()">Save</button>

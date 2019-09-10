@@ -1,8 +1,10 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { MenuDialogComponent } from '../menu-dialog/menu-dialog.component';
 import { CreateComponent} from '../create/create.component';
 import { ImportComponent } from '../import/import.component';
+import{ DataServiceService} from '../data-service.service'
+
 
 
 @Component({
@@ -10,7 +12,7 @@ import { ImportComponent } from '../import/import.component';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit{
   Firstname: string;
   Lastname: string;
   Company: string;
@@ -19,8 +21,14 @@ export class MenuComponent {
   Phone: string;
   Notes: string; 
   Label : string;
+   
+  labels;
 
-  constructor( public dialog: MatDialog) { }
+  constructor( public dialog: MatDialog, public dataService: DataServiceService) { }
+
+  ngOnInit() {
+    this.labels = this.dataService.getlabel();    
+  }
 
   openDialog(): void{
     const dialogRef = this.dialog.open(MenuDialogComponent, {
