@@ -29,6 +29,10 @@ export class MenuComponent implements OnInit{
   ngOnInit() {
     this.labels = this.dataService.getlabel();    
   }
+ 
+  public deleteContact(label){
+    this.dataService.deletecontact(label);
+    }
 
   openDialog(): void{
     const dialogRef = this.dialog.open(MenuDialogComponent, {

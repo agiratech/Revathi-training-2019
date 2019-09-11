@@ -7,22 +7,22 @@
             <path fill="#EA4335" d="M20 16V6h-4v14z"></path>
             <path fill="none" d="M0 0h36v36H0z"></path>
         </svg>Create contact</button>
-<li><mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/contact'><span>Contacts</span></a></li>
-<li><mat-icon>history</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/frequent'><span>Frequently contacted</span></a></li>
-<li><mat-icon>business</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/directory'><span>Directory</span></a></li>
-<li><mat-icon>filter_none</mat-icon>&nbsp;&nbsp;&nbsp;<a routerLink='/duplicate'><span>Duplicates</span></a></li>
+        <a routerLink='/contact'><li><mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;<span>Contacts</span></li></a>
+        <a routerLink='/frequent'><li><mat-icon>history</mat-icon>&nbsp;&nbsp;&nbsp;<span>Frequently contacted</span></li></a>
+        <a routerLink='/directory'><li><mat-icon>business</mat-icon>&nbsp;&nbsp;&nbsp;<span>Directory</span></li></a>
+        <a routerLink='/duplicate'><li><mat-icon>filter_none</mat-icon>&nbsp;&nbsp;&nbsp;<span>Duplicates</span></li></a>
 <div style="border-bottom:1px solid lightgray;"></div>
 <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
+         <li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
        </mat-panel-title>
     </mat-expansion-panel-header>
-       <li *ngFor="let label of labels"><mat-icon>label_outlined</mat-icon>&nbsp;&nbsp;&nbsp;<span>{{label.name}}</span></li>
-       <li><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="labelbox()">Create Label</span></li> 
+       <li *ngFor="let label of labels" class="delete"><mat-icon>label_outlined</mat-icon>&nbsp;&nbsp;&nbsp;<span >{{label.name}}</span><mat-icon (click)="deleteContact(label)" class="del">delete_outline</mat-icon></li>
+       <li (click)="labelbox()"><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span >Create Label</span></li> 
 </mat-expansion-panel>
 <div style="border-bottom:1px solid lightgray;"></div>
-<li><mat-icon>import_contacts</mat-icon>&nbsp;&nbsp;&nbsp;<span (click)="importbox()">Import</span></li>
+<li (click)="importbox()"><mat-icon>import_contacts</mat-icon>&nbsp;&nbsp;&nbsp;<span >Import</span></li>
 <li><mat-icon>cloud_download</mat-icon>&nbsp;&nbsp;&nbsp;<span>Export</span></li>
 <li><mat-icon>print</mat-icon>&nbsp;&nbsp;&nbsp;<span>Print</span></li>
 <div style="border-bottom:1px solid lightgray;"></div>

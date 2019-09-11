@@ -35,4 +35,10 @@ public createLabel(label :{name}){
 public getlabel():Array<{name}>{
   return this.labels;
 }
+public deletecontact(label) {
+  const index: number = this.labels.indexOf(label);
+  if (index !== -1) {
+      this.labels.splice(index, 1);
+  }        
+}
 }

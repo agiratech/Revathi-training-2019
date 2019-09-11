@@ -38,19 +38,20 @@ mat-icon{
   float:right;
 }
 
- tr:hover mat-icon {
+.secondline:hover mat-icon {
    opacity:.5;
  }
- tr:hover mat-checkbox{
+.secondline:hover mat-checkbox{
    opacity:1;
  }
 
- tr:hover img{
+.secondline:hover img{
     opacity:0;
  }
 
- tr:hover{
+.secondline:hover{
    background-color: #f1f3f4;
+   cursor: pointer;
  }
 
  td{

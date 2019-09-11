@@ -24,6 +24,7 @@
     background-color:#f1f3f4;
     border-radius: 5em;
     color:black;
+    cursor: pointer;
 }
 .sidenav li:active{
     background-color: lightblue;
@@ -46,4 +47,12 @@ a{
 span{
     cursor: pointer;
 }
-
+.delete:hover .del{
+    float: right;
+    opacity:1;
+    color: #5f6368;
+    cursor: pointer;
+}
+.del{
+    opacity:0;
+}
