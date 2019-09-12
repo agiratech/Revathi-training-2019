@@ -13,7 +13,6 @@ export interface DialogData{
 export class CreateComponent {
     
   label: { name }={ name : ""};
-
     constructor(
       public dialogRef: MatDialogRef<CreateComponent>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData, public dataService : DataServiceService) {}

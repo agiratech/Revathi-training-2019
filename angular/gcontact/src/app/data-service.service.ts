@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataServiceService {
 
   constructor() { }
@@ -10,6 +11,7 @@ export class DataServiceService {
 labels=[
   {"name": "reva"}
 ]
+
 
 contacts = [
   {"Firstname": "reva", 
