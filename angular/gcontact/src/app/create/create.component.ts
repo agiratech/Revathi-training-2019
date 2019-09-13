@@ -24,6 +24,7 @@ export class CreateComponent {
     createLabel(){
       this.dataService.createLabel(this.label);
       this.label = { name : ""};
+      this.dialogRef.close();
     }
   }
 

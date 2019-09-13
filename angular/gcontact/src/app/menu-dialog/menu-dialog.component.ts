@@ -33,5 +33,6 @@ export class MenuDialogComponent {
     console.log(this.contact);
     this.dataService.createcontact(this.contact);
     this.contact = { Firstname : "", Lastname : "", Company : "", Job : "", Email : "", Phone : "", Notes : ""};
-}
+    this.dialogRef.close();
+  }
 }
