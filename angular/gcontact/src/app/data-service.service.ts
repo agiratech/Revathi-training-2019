@@ -12,7 +12,6 @@ labels=[
   {"name": "reva"}
 ]
 
-
 contacts = [
   {"Firstname": "reva", 
   "Lastname" : "reva", 

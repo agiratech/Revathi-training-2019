@@ -1,9 +1,7 @@
-<!-- <div class="first">
-    <a routerLink='/menu-dialog'>create contact</a>
-</div> -->
 
 <div>
     <table>
+        <input type= "text" [(ngModel)]="filterStatus">
         <tr class="firstline">
             <th colspan="2">Name</th>
             <th>Email</th>
@@ -13,7 +11,7 @@
         <tr>
             <span>CONTACTS({{count}})</span>
         </tr>
-        <tr class="secondline" *ngFor="let contact of contacts">
+        <tr class="secondline" *ngFor="let contact of contacts | filter : filterStatus : 'Firstname'">
             <td class="image"><img class="contactimage" src="../assets/download.png">
             <mat-checkbox color="primary"></mat-checkbox></td>
             <td class="name">{{contact.Firstname}}</td>

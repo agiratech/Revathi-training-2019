@@ -17,5 +17,6 @@ export class ContactComponent implements OnInit {
     this.count = this.contacts.length;
 
   }
+  filterStatus="";
 
 }

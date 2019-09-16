@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -9,12 +9,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderComponent {
   constructor() { }
  
-  @Input() searchModel;
-  @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
-
-
-updateSearchModel(value) {
-    this.searchModel = value;
-    this.searchModelChange.emit(this.searchModel);
-  }
+filterStatus="";
 }
