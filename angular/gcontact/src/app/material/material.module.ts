@@ -5,8 +5,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -18,7 +18,9 @@ const MaterialComponent=[
   MatDialogModule,
   MatCheckboxModule,
   MatSidenavModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatMenuModule,
+  MatTableModule
    ];
 
 @NgModule({

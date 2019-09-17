@@ -4,7 +4,26 @@
     <label>Contacts</label>
     <input [(ngModel)]="filterStatus" class="searchbar" type ="text" placeholder="Search">
     <mat-icon class="searchicon">search</mat-icon>
-    <mat-icon class="help">help_outline</mat-icon>
-    <mat-icon class="settings">settings</mat-icon>
+    <mat-icon [matMenuTriggerFor]="help" class="help">help_outline</mat-icon>
+    <mat-menu #help="matMenu">
+        <button mat-menu-item>        
+            <span>Send Feedback</span>       
+        </button>
+        <button mat-menu-item>        
+            <span>Help</span>
+        </button>
+    </mat-menu>
+    <mat-icon [matMenuTriggerFor]="menu" class="settings">settings</mat-icon>
+    <mat-menu #menu="matMenu">
+            <button mat-menu-item>        
+                <span>Delegate Access</span>       
+            </button>
+            <button mat-menu-item>        
+                <span>Undo Changes</span>
+            </button>
+            <button mat-menu-item>        
+                <span>More Settings</span>
+            </button>
+        </mat-menu>
     <mat-icon class="apps">apps</mat-icon>
 </div>   

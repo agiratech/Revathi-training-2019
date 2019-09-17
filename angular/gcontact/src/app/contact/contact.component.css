@@ -57,7 +57,7 @@ mat-icon{
  td{
    position: relative;
  }
- td mat-checkbox{
+ td .checkboxrow{
   position: absolute;
   top:12px;
   left: 20px;

@@ -1,23 +1,37 @@
-
-<div>
-    <table>
-        <input type= "text" [(ngModel)]="filterStatus">
+ <input type= "text" [(ngModel)]="filterStatus">
+<table>
         <tr class="firstline">
-            <th colspan="2">Name</th>
+
+            <th colspan="2">
+            <mat-checkbox color="primary" [(ngModel)]="Boxchecked"
+                                          [(indeterminate)]="indeterminate"
+                                          (change)="checkChange()">
+            </mat-checkbox>Name</th>
             <th>Email</th>
             <th>PhoneNo</th>
-            <th><mat-icon class="head">more_vert</mat-icon></th>
+            <th><mat-icon [matMenuTriggerFor]="menu" class="head">more_vert</mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>list</mat-icon>
+                    <span>Display density</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>tabel_chart_outline</mat-icon>
+                    <span>Change column order</span>
+                </button>
+            </mat-menu></th>
         </tr>
         <tr>
             <span>CONTACTS({{count}})</span>
         </tr>
         <tr class="secondline" *ngFor="let contact of contacts | filter : filterStatus : 'Firstname'">
             <td class="image"><img class="contactimage" src="../assets/download.png">
-            <mat-checkbox color="primary"></mat-checkbox></td>
+            <mat-checkbox color="primary" class= "checkboxrow" 
+                         [(ngModel)]="contact.checked"
+                         (change)="contactChange()"></mat-checkbox></td>
             <td class="name">{{contact.Firstname}}</td>
             <td class="name">{{contact.Email}}</td>
             <td class="name">{{contact.Phone}}</td>
             <td><mat-icon>more_vert</mat-icon><mat-icon>edit</mat-icon></td>
         </tr>
-    </table>
-</div>
+</table>
