@@ -18,7 +18,7 @@
          <li><mat-icon>keyboard_arrow_up</mat-icon>&nbsp;&nbsp;&nbsp;<span>Labels</span></li>
        </mat-panel-title>
     </mat-expansion-panel-header>
-       <li *ngFor="let label of labels" class="delete"><mat-icon>label_outlined</mat-icon>&nbsp;&nbsp;&nbsp;<span >{{label.name}}</span><mat-icon (click)="deleteContact(label)" class="del">delete_outline</mat-icon></li>
+       <li *ngFor="let label of labels" class="delete"><mat-icon>label_outlined</mat-icon>&nbsp;&nbsp;&nbsp;<span >{{label.name}}</span><mat-icon (click)="deleteLabel(label)" class="del">delete_outline</mat-icon></li>
        <li (click)="labelbox()"><mat-icon>add</mat-icon>&nbsp;&nbsp;&nbsp;<span >Create Label</span></li> 
 </mat-expansion-panel>
 <div style="border-bottom:1px solid lightgray;"></div>

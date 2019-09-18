@@ -36,10 +36,16 @@ public createLabel(label :{name}){
 public getlabel():Array<{name}>{
   return this.labels;
 }
-public deletecontact(label) {
+public deleteLabel(label) {
   const index: number = this.labels.indexOf(label);
   if (index !== -1) {
       this.labels.splice(index, 1);
+  }        
+}
+public deleteContact(contact) {
+  const index: number = this.contacts.indexOf(contact);
+  if (index !== -1) {
+      this.contacts.splice(index, 1);
   }        
 }
 }

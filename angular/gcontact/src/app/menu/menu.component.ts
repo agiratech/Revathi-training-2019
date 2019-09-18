@@ -30,8 +30,8 @@ export class MenuComponent implements OnInit{
     this.labels = this.dataService.getlabel();    
   }
  
-  public deleteContact(label){
-    this.dataService.deletecontact(label);
+  public deleteLabel(label){
+    this.dataService.deleteLabel(label);
     }
 
   openDialog(): void{

@@ -6,7 +6,7 @@
             <mat-checkbox color="primary" [(ngModel)]="Boxchecked"
                                           [(indeterminate)]="indeterminate"
                                           (change)="checkChange()">
-            </mat-checkbox>Name</th>
+            </mat-checkbox> <button (click)="deleteitems()">delete</button> Name</th>
             <th>Email</th>
             <th>PhoneNo</th>
             <th><mat-icon [matMenuTriggerFor]="menu" class="head">more_vert</mat-icon>
@@ -32,6 +32,6 @@
             <td class="name">{{contact.Firstname}}</td>
             <td class="name">{{contact.Email}}</td>
             <td class="name">{{contact.Phone}}</td>
-            <td><mat-icon>more_vert</mat-icon><mat-icon>edit</mat-icon></td>
+            <td><mat-icon (click)="editContact()">more_vert</mat-icon><mat-icon>edit</mat-icon></td>
         </tr>
 </table>
