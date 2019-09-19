@@ -1,8 +1,3 @@
-<div>
-    <span>Delete this contact?</span>
-    </div>
-    <div><br><br><br>
-            <button mat-button (click)="onClose()" class="cancel">Cancel</button>
-             <button mat-button class="cancel" (click)="dialogRef.close(true)">Delete</button>
-             </div>
-    
+    <h1 mat-dialog-title>Delete selected contacts</h1>
+<button mat-button color="primary" class="right"(click)="onClose()">Cancel</button>
+<button mat-button color="primary" class="right"(click)="dialogRef.close(true)">Delete</button>

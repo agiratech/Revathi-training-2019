@@ -2,21 +2,20 @@ img{
     width:35px;
 }
 
-table {  
-    border: none;
-  }
-  
-  table {
+
+table {
     border-collapse: collapse;
     width: 100%;
-  }
+    border: none;
+    cursor: pointer;
+}
   
-  th{
+th{
     padding: 15px;
     border-bottom: 1px solid black;
     text-align: left;
 
-  }
+}
 
 td {
   text-align: left;
@@ -36,6 +35,7 @@ mat-icon{
   opacity: 0;
   padding:10px;
   float:right;
+  cursor: pointer;
 }
 
 .secondline:hover mat-icon {

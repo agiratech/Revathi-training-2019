@@ -4,6 +4,7 @@
 mat-icon{
     padding:15px; 
     opacity: .5;
+    cursor: pointer;
 }
 label{
     position: absolute;

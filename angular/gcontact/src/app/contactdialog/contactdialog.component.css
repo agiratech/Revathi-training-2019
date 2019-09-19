@@ -1,0 +1,32 @@
+.title{
+    display: flex;
+    flex-direction: row;
+}
+img{
+    width:50px;
+    float:left;
+}
+div span{
+    font-size: 30px;
+    padding: 20px;
+    margin-right:260px;
+    text-transform: capitalize;
+}
+.head{
+   padding:10px;
+}
+td{
+    height:15px;
+    padding-right: 8px;
+    text-align: left;
+  }
+table{
+    width:50%;
+}
+mat-icon{
+    opacity:.4;
+    cursor: pointer;
+}
+span{
+    font-size: 30px;
+}

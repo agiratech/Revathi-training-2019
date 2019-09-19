@@ -17,6 +17,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FilterPipe } from './filter.pipe';
 import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
+import { ContactdialogComponent } from './contactdialog/contactdialog.component';
 
 
 
@@ -35,7 +37,9 @@ import { DeleteComponent } from './delete/delete.component';
     ContactComponent,
     LayoutComponent,
     FilterPipe,
-    DeleteComponent
+    DeleteComponent,
+    EditComponent,
+    ContactdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { DeleteComponent } from './delete/delete.component';
      MenuDialogComponent,
      CreateComponent,
      ImportComponent,
-     DeleteComponent
+     DeleteComponent,
+     EditComponent,
+     ContactdialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

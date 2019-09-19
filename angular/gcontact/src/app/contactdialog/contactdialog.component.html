@@ -1,0 +1,26 @@
+<div class="title" mat-dialog-title>
+        <div><img class="contactimage" src="../assets/download.png"></div>
+        <div><span>{{data.Firstname}}</span></div>
+        <div class="head"><mat-icon (click)="editContact(data)">edit</mat-icon></div>
+        <div class="head"><mat-icon (click)="onNoClick()">clear</mat-icon></div>
+</div>
+<hr>
+<span>Contact Details</span>
+<table class="details">
+        <tr>
+                <td><mat-icon>business</mat-icon></td>
+                <td>{{data.Company}}</td>
+        </tr>
+        <tr>
+                <td><mat-icon>mail_outline</mat-icon></td>
+                <td>{{data.Email}}</td>
+        </tr>
+        <tr>
+                <td><mat-icon>phone</mat-icon></td>
+                <td>{{data.Phone}}</td>
+        </tr>
+        <tr>
+                <td><mat-icon>note</mat-icon></td>
+                <td>{{data.Note}}</td>
+        </tr>
+</table>

@@ -24,14 +24,15 @@
         <tr>
             <span>CONTACTS({{count}})</span>
         </tr>
-        <tr class="secondline" *ngFor="let contact of contacts | filter : filterStatus : 'Firstname'">
+        <tr (click)="openContact(contact)" class="secondline" *ngFor="let contact of contacts | filter : filterStatus : 'Firstname'">
             <td class="image"><img class="contactimage" src="../assets/download.png">
             <mat-checkbox color="primary" class= "checkboxrow" 
                          [(ngModel)]="contact.checked"
-                         (change)="contactChange()"></mat-checkbox></td>
+                         (change)="contactChange()" 
+                        ></mat-checkbox></td>
             <td class="name">{{contact.Firstname}}</td>
             <td class="name">{{contact.Email}}</td>
             <td class="name">{{contact.Phone}}</td>
-            <td><mat-icon (click)="editContact()">more_vert</mat-icon><mat-icon>edit</mat-icon></td>
+            <td><mat-icon >more_vert</mat-icon><mat-icon (click)="editContact(contact)">edit</mat-icon></td>
         </tr>
 </table>

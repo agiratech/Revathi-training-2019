@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{ DataServiceService} from '../data-service.service';
 import { MatDialog } from '@angular/material';
 import { DeleteComponent} from '../delete/delete.component';
-import { Subscription } from 'rxjs';
+import { EditComponent } from '../edit/edit.component';
+import { ContactdialogComponent } from '../contactdialog/contactdialog.component';
 
 
 
@@ -20,7 +21,7 @@ export class ContactComponent implements OnInit {
   
   constructor(public dataService: DataServiceService, public dialog : MatDialog) { }
   ngOnInit() {
-  this.contacts = this.dataService.getContacts();
+  this.contacts = this.dataService.getNewContacts();
   this.count = this.contacts.length;
   }
 
@@ -58,31 +59,46 @@ checkChange(){
   //       this.contacts.splice(index, 1);
   //       }
   // }
+  openContact(contact):void{
+    const dialogRef = this.dialog.open(ContactdialogComponent, {
+      width: '600px',
+      data: contact
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+  });
+    }
 
   deleteitems(contact): void{
     const dialogRef = this.dialog.open(DeleteComponent, {
       width: '300px',
-      height: '200px',
+      data : contact
     });
     dialogRef.afterClosed().subscribe(
       (response) => {
-        if(this.Boxchecked == true){
-              this.dataService.deleteContact(contact);
-              console.log("cleared");
-          }}
-          );
-//         this.contacts.forEach(item => {
-//           let index: number = (this.dataService.contacts).findIndex(d => d === item);
-//           console.log(item);
-//           if(index !== -1){
-//           (this.dataService.contacts).splice(index, 1);
-//         console.log(this.dataService.contacts)}
-//           // this.dataService.deleteContact(item.contact)
-//           })
+        // if(this.Boxchecked == true){
+        //       this.dataService.deleteContact(contact);
+        //       console.log("cleared");
+        //   }}
+        //   );}
+        this.contacts.forEach(item => {
+          let index: number = (this.dataService.newContact).findIndex(d => d === item);
+          console.log(item);
+          if(index !== -1){
+          (this.dataService.newContact).splice(index, 1);
+        console.log(this.dataService.newContact)}
+          // this.dataService.deleteContact(item.contact)
+          })
 
-//          } );
-//     console.log('The dialog was closed');
-// }
-
+         } );}
+ 
+editContact(contact): void{
+  const dialogRef = this.dialog.open(EditComponent, {
+    width: '600px',
+    data: contact
+  });
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+});
   }
 }

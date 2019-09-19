@@ -11,19 +11,71 @@ export class DataServiceService {
 labels=[
   {"name": "reva"}
 ]
+newContact=[{ "Firstname": "revathi", 
+"Lastname" : "Muthu", 
+"Company" : "aaa",
+"Job" : "Engineer",
+"Email": "reva@mail.com", 
+"Phone": "1222345663", 
+"Notes" : ""}]
 
 contacts = [
-  {"Firstname": "reva", 
-  "Lastname" : "reva", 
-  "Company" : "hi",
-  "Job" : "rev",
-    "Email": "reyyyyyyyyyyy", 
+  { "Firstname": "revathi", 
+    "Lastname" : "Muthu", 
+    "Company" : "aaa",
+    "Job" : "Engineer",
+    "Email": "reva@mail.com", 
     "Phone": "1222345663", 
-    "Notes" : ""}
+    "Notes" : ""
+  },
+  { "Firstname": "niha", 
+    "Lastname" : "venu", 
+    "Company" : "bbb",
+    "Job" : "Engineer",
+    "Email": "niha@mail.com", 
+    "Phone": "1222345663", 
+    "Notes" : ""
+  },
+  { "Firstname": "sathya", 
+    "Lastname" : "vadivel", 
+    "Company" : "ccc",
+    "Job" : "Engineer",
+    "Email": "sathya@mail.com", 
+    "Phone": "1222345663", 
+    "Notes" : ""
+  },
+  { "Firstname": "vino", 
+    "Lastname" : "saba", 
+    "Company" : "ddd",
+    "Job" : "Engineer",
+    "Email": "vino@mail.com", 
+    "Phone": "1222345663",
+    "Notes" : ""
+  },
+  { "Firstname": "mary", 
+    "Lastname" : "muthu", 
+    "Company" : "eee",
+    "Job" : "Engineer",
+    "Email": "mary@mail.com", 
+    "Phone": "1222345663", 
+    "Notes" : ""
+  },
+  { "Firstname": "suvetha", 
+    "Lastname" : "praba", 
+    "Company" : "ggg",
+    "Job" : "Engineer",
+    "Email": "suve@mail.com", 
+    "Phone": "1222345663", 
+    "Notes" : ""
+  }
 ]
 
 public createcontact(contact : {Firstname, Lastname, Company, Job, Email, Phone, Notes}){
-  this.contacts.push(contact);
+  this.newContact.push(contact);
+}
+
+public getNewContacts():Array<{Firstname, Lastname, Company, Job, Email, Phone, Notes}>{
+  return this.newContact;
 }
 
 public getContacts():Array<{Firstname, Lastname, Company, Job, Email, Phone, Notes}>{
@@ -45,7 +97,7 @@ public deleteLabel(label) {
 public deleteContact(contact) {
   const index: number = this.contacts.indexOf(contact);
   if (index !== -1) {
-      this.contacts.splice(index, 1);
+      this.newContact.splice(index, 1);
   }        
 }
 }
