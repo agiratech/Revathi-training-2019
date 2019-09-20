@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ DataServiceService} from '../data-service.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { DeleteComponent} from '../delete/delete.component';
 import { EditComponent } from '../edit/edit.component';
 import { ContactdialogComponent } from '../contactdialog/contactdialog.component';
@@ -15,11 +15,11 @@ import { ContactdialogComponent } from '../contactdialog/contactdialog.component
 export class ContactComponent implements OnInit {
   count;
   contacts=[];
+  undoContact=[];
   Boxchecked : boolean = false;
-  indeterminate : boolean = false;
- 
+  indeterminate : boolean = false; 
   
-  constructor(public dataService: DataServiceService, public dialog : MatDialog) { }
+  constructor(private snackBar: MatSnackBar, public dataService: DataServiceService, public dialog : MatDialog) { }
   ngOnInit() {
   this.contacts = this.dataService.getNewContacts();
   this.count = this.contacts.length;
@@ -53,15 +53,9 @@ checkChange(){
   
   }
 }
-  // deleteContact(value){
-  //     const index = this.contacts.indexOf(value.checked);
-  //       if(index ! == -1){
-  //       this.contacts.splice(index, 1);
-  //       }
-  // }
   openContact(contact):void{
     const dialogRef = this.dialog.open(ContactdialogComponent, {
-      width: '600px',
+      width: '500px',
       data: contact
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -76,21 +70,28 @@ checkChange(){
     });
     dialogRef.afterClosed().subscribe(
       (response) => {
-        // if(this.Boxchecked == true){
-        //       this.dataService.deleteContact(contact);
-        //       console.log("cleared");
-        //   }}
-        //   );}
-        this.contacts.forEach(item => {
-          let index: number = (this.dataService.newContact).findIndex(d => d === item);
-          console.log(item);
+      //   console.log(this.contacts.filter(d=>d.checked==true));
+      // });}
+        // // if(this.Boxchecked == true){
+        // //       this.dataService.deleteContact(contact);
+        // //       console.log("cleared");
+        // //   }}
+        // //   );}
+          let index : any = this.contacts.filter(d=>d.checked == true);
+          console.log(index, "index");
           if(index !== -1){
-          (this.dataService.newContact).splice(index, 1);
-        console.log(this.dataService.newContact)}
-          // this.dataService.deleteContact(item.contact)
-          })
+              // this.contacts= this.contacts.filter(item => item == index);
+              this.contacts.splice(index,1);
+              console.log("cleared");   
+          }    
+          this.openSnackBar('deleted', this.undo());
+          // this.contacts = this.contacts.filter( item => item == !index);
+          // console.log(this.contacts, "contact");
+         } );
 
-         } );}
+         }
+
+
  
 editContact(contact): void{
   const dialogRef = this.dialog.open(EditComponent, {
@@ -100,5 +101,18 @@ editContact(contact): void{
   dialogRef.afterClosed().subscribe(result => {
     console.log('The dialog was closed');
 });
+  }
+
+  openSnackBar(message: string, action : string) {
+    this.snackBar.open(message, 'undo', {
+      duration: 5000,
+    });
+  }
+
+  undo():any{
+   if(this.contacts.length !== 0){
+     this.undoContact.push(this.contacts.pop());
+     console.log(this.undoContact);
+   }
   }
 }

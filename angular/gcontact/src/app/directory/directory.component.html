@@ -9,13 +9,12 @@
             <tr>
                 <span>Directory({{count}})</span>
             </tr>
-            <tr *ngFor="let contact of contacts">
+            <tr (click)="openContact(contact)" *ngFor="let contact of contacts">
                 <td class="image"><img class="contactimage" src="../assets/download.png">
-                <mat-checkbox color="primary"></mat-checkbox></td>
                 <td class="name">{{contact.Firstname}}</td>
                 <td class="name">{{contact.Email}}</td>
                 <td class="name">{{contact.Phone}}</td>
-                <td><mat-icon>more_vert</mat-icon><mat-icon>edit</mat-icon></td>
+                <td><mat-icon>more_vert</mat-icon></td>
             </tr>
         </table>
     </div>

@@ -19,7 +19,7 @@ import { FilterPipe } from './filter.pipe';
 import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
 import { ContactdialogComponent } from './contactdialog/contactdialog.component';
-
+// import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
 
 
 
@@ -47,7 +47,7 @@ import { ContactdialogComponent } from './contactdialog/contactdialog.component'
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    
+    // InternationalPhoneNumberModule
     
   ],
   entryComponents:[

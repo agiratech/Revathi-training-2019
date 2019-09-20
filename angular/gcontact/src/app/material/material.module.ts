@@ -7,6 +7,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -20,7 +22,8 @@ const MaterialComponent=[
   MatSidenavModule,
   MatExpansionModule,
   MatMenuModule,
-  MatTableModule
+  MatTableModule,
+  MatSnackBarModule
    ];
 
 @NgModule({

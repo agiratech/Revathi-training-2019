@@ -9,11 +9,12 @@ img{
 div span{
     font-size: 30px;
     padding: 20px;
-    margin-right:260px;
     text-transform: capitalize;
 }
 .head{
-   padding:10px;
+   padding-left:150px;
+   margin:10px;
+   float: right;
 }
 td{
     height:15px;
@@ -26,6 +27,7 @@ table{
 mat-icon{
     opacity:.4;
     cursor: pointer;
+    padding:10px;
 }
 span{
     font-size: 30px;

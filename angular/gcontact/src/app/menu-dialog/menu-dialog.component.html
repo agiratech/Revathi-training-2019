@@ -20,6 +20,9 @@
 <tr>
 <td><mat-icon>phone</mat-icon></td>
 <td><mat-form-field class="form"><input matInput [(ngModel)]="contact.Phone" placeholder="Phone" name="Phone" required></mat-form-field></td>
+<!-- <td>
+<international-phone-number [(ngModel)]="contact.Phone" placeholder="Phone" [maxlength]="20" [defaultCountry]="'in'" [required]="true" name="Phone" [allowDropdown]=""></international-phone-number>
+</td> -->
 </tr>
 <tr>
 <td><mat-icon>note</mat-icon></td>
