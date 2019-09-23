@@ -81,7 +81,8 @@ checkChange(){
           console.log(index, "index");
           if(index !== -1){
               // this.contacts= this.contacts.filter(item => item == index);
-              this.contacts.splice(index,1);
+              // this.contacts.splice(index,1);
+              this.dataService.deleteContact(contact);
               console.log("cleared");   
           }    
           this.openSnackBar('deleted', this.undo());
@@ -112,7 +113,7 @@ editContact(contact): void{
   undo():any{
    if(this.contacts.length !== 0){
      this.undoContact.push(this.contacts.pop());
-     console.log(this.undoContact);
+     console.log(this.undoContact, "undo");
    }
   }
 }

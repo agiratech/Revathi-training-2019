@@ -41,27 +41,14 @@ mat-icon{
  tr:hover mat-icon {
    opacity:.5;
  }
- tr:hover mat-checkbox{
-   opacity:1;
+ tr:hover .contactimage{
+   background-color: #f1f3f4;
  }
-
- tr:hover img{
-    opacity:0;
- }
-
  tr:hover{
    background-color: #f1f3f4;
  }
 
- td{
-   position: relative;
- }
- td mat-checkbox{
-  position: absolute;
-  top:12px;
-  left: 20px;
-  opacity:0;
- }
+ 
 .firstline:hover{
   background-color: white;
 }

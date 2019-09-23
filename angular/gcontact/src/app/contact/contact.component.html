@@ -25,7 +25,7 @@
             <span>CONTACTS({{count}})</span>
         </tr>
         <tr (click)="openContact(contact)" class="secondline" *ngFor="let contact of contacts | filter : filterStatus : 'Firstname'">
-            <td class="image"><img class="contactimage" src="../assets/download.png">
+            <td class="image">
             <mat-checkbox color="primary" class= "checkboxrow" 
                          [(ngModel)]="contact.checked"
                          (change)="contactChange()" 

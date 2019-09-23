@@ -70,30 +70,41 @@ contacts = [
   }
 ]
 
-public createcontact(contact : {Firstname, Lastname, Company, Job, Email, Phone, Notes}){
+public createcontact(contact : {Firstname : string, Lastname : string, Company : string, Job : string
+  , Email : string, Phone : string, Notes : string}){
   this.newContact.push(contact);
 }
 
-public getNewContacts():Array<{Firstname, Lastname, Company, Job, Email, Phone, Notes}>{
+public getNewContacts(){
   return this.newContact;
 }
 
-public getContacts():Array<{Firstname, Lastname, Company, Job, Email, Phone, Notes}>{
+public getContacts(){
   return this.contacts;
 }
 
-public createLabel(label :{name}){
+public createLabel(label :{name : string}){
   this.labels.push(label);
 }
-public getlabel():Array<{name}>{
+
+
+public getlabel(){
   return this.labels;
 }
+
+// public getlabel() : Array <{name}>{
+//   return this.labels;
+// }
+
+
 public deleteLabel(label) {
   const index: number = this.labels.indexOf(label);
   if (index !== -1) {
       this.labels.splice(index, 1);
   }        
 }
+
+
 public deleteContact(contact) {
   const index: number = this.contacts.indexOf(contact);
   if (index !== -1) {

@@ -41,13 +41,7 @@ mat-icon{
 .secondline:hover mat-icon {
    opacity:.5;
  }
-.secondline:hover mat-checkbox{
-   opacity:1;
- }
 
-.secondline:hover img{
-    opacity:0;
- }
 
 .secondline:hover{
    background-color: #f1f3f4;
@@ -57,11 +51,11 @@ mat-icon{
  td{
    position: relative;
  }
+ 
  td .checkboxrow{
   position: absolute;
   top:12px;
   left: 20px;
-  opacity:0;
  }
 .firstline:hover{
   background-color: white;
