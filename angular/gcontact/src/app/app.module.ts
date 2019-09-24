@@ -20,6 +20,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
 import { ContactdialogComponent } from './contactdialog/contactdialog.component';
 // import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material';
 
 
 
@@ -58,7 +59,10 @@ import { ContactdialogComponent } from './contactdialog/contactdialog.component'
      EditComponent,
      ContactdialogComponent
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

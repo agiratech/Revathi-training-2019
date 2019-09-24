@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import { MenuDialogComponent } from '../menu-dialog/menu-dialog.component';
 import { CreateComponent} from '../create/create.component';
 import { ImportComponent } from '../import/import.component';
@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit{
    
   labels;
 
-  constructor( public dialog: MatDialog, public dataService: DataServiceService) { }
+  constructor( private snackBar: MatSnackBar, public dialog: MatDialog, public dataService: DataServiceService) { }
 
   ngOnInit() {
     this.labels = this.dataService.getlabel();    
@@ -41,8 +41,13 @@ export class MenuComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('contact created');
+      this.openSnackBar('contact created');
   });
+}
+
+openSnackBar(message: string) {
+  this.snackBar.open(message);
 }
 
 labelbox(): void{
@@ -52,7 +57,7 @@ labelbox(): void{
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    console.log('label created');
 });
 }
 
@@ -62,7 +67,7 @@ importbox(): void{
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    console.log('import box');
 });
 }
 }

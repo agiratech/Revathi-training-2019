@@ -59,7 +59,7 @@ checkChange(){
       data: contact
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('contact opened');
   });
     }
 
@@ -100,14 +100,12 @@ editContact(contact): void{
     data: contact
   });
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    console.log('edited contact');
 });
   }
 
   openSnackBar(message: string, action : string) {
-    this.snackBar.open(message, 'undo', {
-      duration: 5000,
-    });
+    this.snackBar.open(message, 'undo');
   }
 
   undo():any{
