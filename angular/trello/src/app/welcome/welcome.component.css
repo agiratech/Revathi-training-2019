@@ -1,10 +1,39 @@
 .container{
     display:flex;
     flex-direction: row;
-    flex:20%;
 }
 .form{
+    width:20%;
     margin: 10px;
     padding:10px;
     background-color: aliceblue;
+    cursor: pointer;
+
+}
+.smallcard{
+    margin:10px;
+    word-break: break-all;
+    cursor: pointer;
+
+}
+
+button{
+    margin: 10px;
+}
+
+.edit{
+    float:right;
+    opacity:0;
+    cursor: pointer;
+}
+
+.smallcard:hover{
+    background-color: #d1e6f9 ;
+}
+.smallcard:hover .edit{
+    opacity:.4;
+}
+
+.edit:hover{
+    background-color:#b8ccdd;
 }

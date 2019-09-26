@@ -1,0 +1,6 @@
+<form *ngIf="!showcard">
+<mat-form-field class="textarea">
+<textarea matInput [(ngModel)]="card.name" placeholder="Enter a title for this card..." name="name"></textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="addcard()">addcard</button>
+</form>

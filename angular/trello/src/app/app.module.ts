@@ -8,6 +8,12 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BoardComponent } from './board/board.component';
 import {MatCardModule} from '@angular/material/card';
+import { CardComponent } from './card/card.component';
+import {FormsModule} from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { EditComponent } from './edit/edit.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -15,7 +21,9 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     HeaderComponent,
     WelcomeComponent,
-    BoardComponent
+    BoardComponent,
+    CardComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +32,16 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatExpansionModule,
+    MatDialogModule
 
   ],
+  entryComponents:[
+      EditComponent,
+  ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

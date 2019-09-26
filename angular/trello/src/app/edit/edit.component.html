@@ -1,0 +1,6 @@
+<form>
+     <mat-form-field>
+    <input matInput [(ngModel)]="data.name" name="edit">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="data">save</button>
+</form>
