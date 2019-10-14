@@ -1,19 +1,27 @@
-<div class="container">
-  <mat-card class="form">  
+ <div class="container">
+    <mat-card class="form">  
       <mat-card-header>
          <mat-card-title>
             <input matInput placeholder="Add list title" name="title">
          </mat-card-title>
       </mat-card-header>
-  <div *ngFor="let card of cards">
-  <mat-card class="smallcard">{{card.name}} <mat-icon class="edit" (click)="editCard(name)">edit</mat-icon></mat-card>
+ <div cdkDropList
+   #cardlist="cdkDropList"
+   [cdkDropListData]="cards"
+   [cdkDropListConnectedTo]="[cardlist]"
+   (cdkDropListDropped)="drop($event)">
+     <div *ngFor="let card of cards" cdkDrag>
+  <mat-card class="smallcard">{{card}} <mat-icon class="edit" (click)="editCard(card)">edit</mat-icon></mat-card>
   </div>
+</div>
   <button mat-button (click)="toggle()"> 
-    <mat-icon class="add">add</mat-icon>{{condition ? 'Add another card' : 'close'}}
+   <mat-icon class="add">add</mat-icon>{{condition ? 'Add another card' : 'close'}}
   </button>
-  <app-card [showcard]= "showNewtext"></app-card>
+   <form #f="ngForm" *ngIf="!showNewtext">
+            <mat-form-field class="textarea">
+            <textarea matInput [(ngModel)]="card" placeholder="Enter a title for this card..." name="name"></textarea>
+            </mat-form-field>
+            <button type="reset" mat-raised-button color="primary" (click)="addcard()">addcard</button>
+   </form>
   </mat-card>
-      <form class="form">
-         <h1>other field</h1>
-      </form>
 </div>

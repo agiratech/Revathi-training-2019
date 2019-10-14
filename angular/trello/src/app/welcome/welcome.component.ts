@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CardService} from '../card.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent} from '../edit/edit.component';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-welcome',
@@ -10,27 +11,53 @@ import { EditComponent} from '../edit/edit.component';
 })
 export class WelcomeComponent implements OnInit {
   cards=[];
-  card : { name }={ name : ""};
+  forms=[];
+  form;
+  card;
   condition : boolean = true;
   showNewtext : boolean = true;
+
+  @Input() formdata;
+
   constructor( public cardService : CardService, public dialog : MatDialog) { }
 
   ngOnInit() {
-    this.cards=this.cardService.getCard();
+  }
+
+  addForm(){
+    this.forms.push(this.form);
   }
   
   toggle(){
     this.condition = !this.condition;
     this.showNewtext= !this.showNewtext;
   }
+   
+  addcard(){
+    this.cards.push(this.card);
+  }
 
-  editCard(name):void{
+
+  editCard(carding):void{
     const dialogRef = this.dialog.open(EditComponent, {
-      width: '100px',
-      data: name
+      width: '250px',
+      data: carding,
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('edited name');
   });
     }
-  }
+  
+  drop(event: CdkDragDrop<string[]>){
+    // if(event.previousContainer === event.container){
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log("dragged");
+    }
+  //   else{
+  //     transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+  //     console.log("hidragged");
+  //   }
+  // }
+    
+}
+

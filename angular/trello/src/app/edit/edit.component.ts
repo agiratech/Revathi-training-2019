@@ -1,9 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { CardService } from '../card.service';
 
-export interface DialogData{
-name : string;
+export interface Cards{
+  name: string;
 }
 
 @Component({
@@ -11,12 +10,12 @@ name : string;
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditComponent {
 
     constructor(public dialogRef: MatDialogRef<EditComponent>,
-      @Inject(MAT_DIALOG_DATA) public data: DialogData,public cardService : CardService) {}
-
-  ngOnInit() {
-  }
-
+      @Inject(MAT_DIALOG_DATA) public data : Cards,
+    ){}
+      onNoClick(): void {
+        this.dialogRef.close();
+      }
 }
