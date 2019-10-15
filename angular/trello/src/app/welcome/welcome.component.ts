@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CardService} from '../card.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent} from '../edit/edit.component';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-welcome',
@@ -10,22 +12,18 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  cards=[];
-  forms=[];
-  form;
+  cards;
   card;
   condition : boolean = true;
   showNewtext : boolean = true;
 
   @Input() formdata;
 
-  constructor( public cardService : CardService, public dialog : MatDialog) { }
-
-  ngOnInit() {
+  constructor(private http : HttpClient, public cardService : CardService, public dialog : MatDialog) { 
+    // this.cards = this.cardService.displayCards();
   }
 
-  addForm(){
-    this.forms.push(this.form);
+  ngOnInit() {
   }
   
   toggle(){
@@ -33,8 +31,15 @@ export class WelcomeComponent implements OnInit {
     this.showNewtext= !this.showNewtext;
   }
    
-  addcard(){
-    this.cards.push(this.card);
+  // addcard(newCard : NgForm){
+    // this.cardService.StoreCards(newCard.value).subscribe(res=>{
+    //   this.cardService.SetCards(res['name']);
+    // }); }
+  
+    addcard( data: { card : string}){
+     this.http.post('https://cards-9b5d4.firebaseio.com/reva.json', data).subscribe(res=>{
+       console.log("hi");
+     })
   }
 
 

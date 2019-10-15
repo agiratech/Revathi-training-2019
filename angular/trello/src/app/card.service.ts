@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export interface Cards{
+export interface Cards {
   name: string;
 }
 
@@ -9,17 +10,34 @@ export interface Cards{
 })
 export class CardService {
 
-cards=[
-  {"name":"helloo"}
-];
+  cards = [];
+  name: string;
 
-constructor() { }
+  constructor(private http: HttpClient) { }
 
-public createCard(newcard){
-  this.cards.push(newcard);
-}
+  // StoreCards(cards: any[]) {
+  //   const headers = new HttpHeaders({ 'Content-type': 'application/json' })
+  //   return this.http.post('https://trello-e4999.firebaseio.com/revathi.json', cards, { headers: headers });
+  
+  // }
 
-public getCard(){
-  return this.cards;
-}
+  // SetCards(id) {
+  //   const headers = new HttpHeaders({ 'Content-type': 'application/json' })
+  //   this.http.get('https://trello-e4999.firebaseio.com/revathi/' + id + '.json', { headers: headers }).subscribe(res => {
+  //     this.cards.push({ 'name': res['name'] })
+  //   })
+  // }
+
+  // displayCards() {
+  //   const headers = new HttpHeaders({ 'Content-type': 'application/json' })
+  //   let data = [];
+  //   this.http.get('https://trello-e4999.firebaseio.com/revathi.json', { headers: headers }).subscribe(res => {
+  //     Object.keys(res).forEach(function (key) {
+  //       data.push({
+  //         id: key, 'name': res[key]['name'],
+  //       })
+  //     })
+  //   })
+  // return data;
+  // }
 }

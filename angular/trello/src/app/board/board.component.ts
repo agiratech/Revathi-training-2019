@@ -9,28 +9,28 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class BoardComponent implements OnInit {
   form;
-  forms = [ ];
-  
+  forms = [];
+
 
 
   constructor() { }
 
   ngOnInit() {
   }
-  
-  addForm(){
+
+  addForm() {
     this.forms.push(this.form);
   }
 
-  drop(event: CdkDragDrop<string[]>){
+  drop(event: CdkDragDrop<string[]>) {
     // if(event.previousContainer === event.container){
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      console.log("form dragged");
-    }
+    moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    console.log("form dragged");
+  }
   //   else{
-    //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-    //   console.log("hidragged");
-    // }
+  //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+  //   console.log("hidragged");
+  // }
   // }
 
 }

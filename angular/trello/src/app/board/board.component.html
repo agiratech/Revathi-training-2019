@@ -1,9 +1,7 @@
-<div class="container"
-    cdkDropList
-        #formlist="cdkDropList"
-        [cdkDropListData]="forms"
-        [cdkDropListConnectedTo]="[formlist]"
-        (cdkDropListDropped)="drop($event)">
-        <app-welcome *ngFor="let form of forms" [formdata]="form" cdkDrag></app-welcome>
-        <button (click)="addForm()" mat-button><mat-icon>add</mat-icon>Add another List</button>
+<div class="container" cdkDropList #formlist="cdkDropList" [cdkDropListData]="forms"
+    [cdkDropListConnectedTo]="[formlist]" (cdkDropListDropped)="drop($event)">
+    <app-welcome *ngFor="let form of forms" [formdata]="form" cdkDrag></app-welcome>
+    <button (click)="addForm()" mat-button>
+        <mat-icon>add</mat-icon>Add another List
+    </button>
 </div>
