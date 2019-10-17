@@ -1,0 +1,6 @@
+<form (ngSubmit)="Signup(f)" #f="ngForm">
+    <h2>REGISTER</h2><br>
+    <input type="email" id="email" placeholder="Email" ngModel name="email" class="form-control" required><br><br>
+    <input type="password" placeholder="Password" id="password" ngModel name="password" class="form-control" required><br><br>
+    <button mat-raised-button color="primary" type="submit">SignUp</button>
+</form>

@@ -1,0 +1,7 @@
+<form (ngSubmit)="Signin(f)" #f="ngForm">
+    <h2>LOGIN</h2><br>
+    <input type="email" id="email" placeholder="Email" ngModel name="email" class="form-control" required><br><br>
+    <input type="password" placeholder="Password" id="password" ngModel name="password" class="form-control" required><br><br>
+    <button mat-raised-button color="primary" type="submit">SignIn</button>
+</form>
+<!-- <app-trello *ngIf="Userservice.ValidUser()"></app-trello> -->

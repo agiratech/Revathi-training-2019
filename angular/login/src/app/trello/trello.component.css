@@ -1,0 +1,124 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-areas: 
+    "a b b c c c c c c c c d d d d d d d d d d d d d e"; 
+    background-color:#011f31;
+}
+
+.home{
+    grid-area:a;
+    width:30px;
+    padding:5px;
+    color:white;
+}
+.board{
+    grid-area:b;
+    display:flex;
+    flex-direction:row;
+}
+.board img{
+    width:20px;
+    height:20px;
+    margin: 10px;
+    background-color:hsla(0,0%,100%,.3);
+}
+.search{
+    grid-area:c;
+    position: relative;
+    color:white;
+
+}
+.searchbar{
+    margin:5px;
+    padding:10px;
+    background-color:hsla(0,0%,100%,.3);
+    border:none;
+    border-radius:5px;
+}
+.search .icon{
+    position: absolute;
+    top:13px;
+    left:170px;
+    color:white;
+
+}
+.centericon{
+    grid-area:d;
+    width:90px;
+    margin:10px ;
+    opacity:.4;
+    color:white;
+}
+
+.centericon:hover{
+    opacity:.6;
+}
+
+.user{
+   grid-area:e;
+   width:30px;
+    padding:5px;
+    color:white;
+
+}
+
+.a > .bor{
+    color:white;
+    position: absolute;
+    background-color:hsla(0,0%,100%,.3);
+    padding:8px;
+    border-radius:5px;
+    font-weight: bold;
+}
+
+.a{ 
+    position: relative;
+    margin:5px;
+    background-color:hsla(0,0%,100%,.3);
+    border-radius:5px;
+    height:35px;
+}
+
+.contain{
+    display:flex;
+    flex-direction: row;
+}
+.form{
+    width:300px;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(34, 52, 68);
+    cursor: pointer;
+}
+.smallcard{
+    margin:10px;
+    word-break: break-all;
+    cursor: pointer;
+}
+
+.button{
+    margin: 10px;
+    width:90%;
+}
+
+.edit{
+    float:right;
+    opacity:0;
+    cursor: pointer;
+}
+
+.smallcard:hover{
+    background-color: #d1e6f9 ;
+}
+.smallcard:hover .edit{
+    opacity:.4;
+}
+
+.edit:hover{
+    background-color:#b8ccdd;
+}
+
+.textarea{
+    width:90%;
+}

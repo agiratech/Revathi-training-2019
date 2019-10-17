@@ -1,4 +1,4 @@
-<div class="container">
+<div class="contain">
   <mat-card class="form">
     <mat-card-header>
       <mat-card-title>
@@ -12,14 +12,14 @@
         </mat-card>
       </div>
     </div>
-    <button mat-button (click)="toggle()">
+    <button class="button" mat-button (click)="toggle()">
       <mat-icon class="add">add</mat-icon>{{condition ? 'Add another card' : 'close'}}
     </button>
     <form #f="ngForm" *ngIf="!showNewtext">
       <mat-form-field class="textarea">
         <textarea matInput [(ngModel)]="card" placeholder="Enter a title for this card..." name="name"></textarea>
       </mat-form-field>
-      <button type="reset" mat-raised-button color="primary" [disabled]= !card (click)="addcard(card)">addcard</button>
+      <button class="button" type="reset" mat-raised-button color="primary" [disabled]= !card (click)="addcard(card)">addcard</button>
     </form>
   </mat-card>
 </div>
