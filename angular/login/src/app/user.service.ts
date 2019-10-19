@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { HttpClient} from '@angular/common/http';
-import * as firebase from 'firebase';
+import * as fire from 'firebase';
+import 'firebase/auth';
+import 'firebase/database';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +13,31 @@ import * as firebase from 'firebase';
 export class UserService {
 
   constructor(private router: Router, private http: HttpClient) {}
-  
+  Cards=[];
+  Boards=[];
   token: string;
 
   signupUser(email : string, password: string){
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(
+      fire.auth().createUserWithEmailAndPassword(email, password)
+      .then(
+        response => {
+          this.router.navigate(['/trello']);
+          fire.auth().currentUser.getIdToken()
+            .then(
+              (token: string) => this.token = token
+            )
+        }
+      ).catch(
         error => console.log(error)
       )
   }
 
   signinUser(email: string, password: string) {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    fire.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {
           this.router.navigate(['/trello']);
-          firebase.auth().currentUser.getIdToken()
+          fire.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token
             )
@@ -36,7 +49,7 @@ export class UserService {
   }
 
   getToken() {
-    firebase.auth().currentUser.getIdToken()
+    fire.auth().currentUser.getIdToken()
       .then(
         (token: string) => this.token = token
       );
@@ -47,7 +60,59 @@ export class UserService {
     return this.token ! = null;
   }
 
-  StoreCards( cards : any[]){
-    return this.http.put('https://cards-9b5d4.firebaseio.com/reva.json', cards);
-  }  
+  StoreCards(formData){
+    return this.http.post('https://cards-9b5d4.firebaseio.com/reva.json', formData);
+  } 
+  
+  AddcardArray(id){
+    this.http.get('https://cards-9b5d4.firebaseio.com/reva/'+id+'.json').subscribe(
+      res => {
+        this.Cards.push({ 'card': res['card'], 'id': id})
+        console.log(this.Cards);
+      });
+  }
+
+  displayCard() {
+    let data = []
+    this.http.get('https://cards-9b5d4.firebaseio.com/reva.json').subscribe(res => {
+      Object.keys(res).forEach(function (key) {
+        data.push({ id: key, 'card': res[key]['card'] })
+      })
+    });
+    return data;
+  }
+  
+  deleteCard(id){
+    return this.http.delete('https://cards-9b5d4.firebaseio.com/reva/'+id+'.json');
+  }
+
+  logout(){
+    fire.auth().signOut().then(
+      response => {
+        this.router.navigate(['/']);
+    this.token = null;
+  });
+}
+
+StoreBoards(formData){
+  return this.http.post('https://cards-9b5d4.firebaseio.com/reva.json', formData);  
+}
+
+AddBoardArray(id){
+  this.http.get('https://cards-9b5d4.firebaseio.com/reva/'+id+'.json').subscribe(
+    res => {
+      this.Boards.push({ 'Board': res['Board'], 'id': id})
+      console.log(this.Boards);
+    });
+}
+displayBoards() {
+  let dataBoard = []
+  this.http.get('https://cards-9b5d4.firebaseio.com/reva.json').subscribe(res => {
+    Object.keys(res).forEach(function (key) {
+      dataBoard.push({ id: key, 'Board': res[key]['Board'] })
+      console.log(dataBoard);
+    })
+  });
+  return dataBoard;
+}
 }

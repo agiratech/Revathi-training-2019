@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(25, 1fr);
     grid-template-areas: 
-    "a b b c c c c c c c c d d d d d d d d d d d d d e"; 
+    "a b b b c c c c c c c d d d d d d d d d d d d d e"; 
     background-color:#011f31;
 }
 
@@ -78,6 +78,7 @@
     background-color:hsla(0,0%,100%,.3);
     border-radius:5px;
     height:35px;
+    font-weight: bold;
 }
 
 .contain{
@@ -102,20 +103,22 @@
     width:90%;
 }
 
-.edit{
+.delete{
     float:right;
     opacity:0;
     cursor: pointer;
+    color:black;
 }
 
 .smallcard:hover{
     background-color: #d1e6f9 ;
+    color:black;
 }
-.smallcard:hover .edit{
+.smallcard:hover .delete{
     opacity:.4;
 }
 
-.edit:hover{
+.delete:hover{
     background-color:#b8ccdd;
 }
 

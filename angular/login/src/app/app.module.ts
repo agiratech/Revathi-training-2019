@@ -16,8 +16,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LayoutComponent } from './layout/layout.component';
 import { TrelloComponent } from './trello/trello.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { BoardComponent } from './board/board.component';
 import { MatCardModule } from '@angular/material/card';
+import { FormComponent } from './trello/form/form.component';
+import { BoardComponent } from './trello/board/board.component';
 
 
 
@@ -28,7 +29,8 @@ import { MatCardModule } from '@angular/material/card';
     SignupComponent,
     LayoutComponent,
     TrelloComponent,
-    BoardComponent
+    FormComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

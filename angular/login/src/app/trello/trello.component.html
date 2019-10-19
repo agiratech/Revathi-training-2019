@@ -1,44 +1,20 @@
 <div class="container">
-    <span class="a">
-        <mat-icon class="home">home</mat-icon>
-    </span>
-    <div class="board">
-        <span class=a>
-            <img src="../../assets/trello.png">
-            <span class="bor">Boards</span></span></div>
-    <div class="search">
-        <mat-icon class="icon">search</mat-icon>
-        <input class="searchbar" type=text>
+  <span class="a">
+    <mat-icon class="home">home</mat-icon>
+  </span>
+  <div class="board">
+    <span class=a>
+      <img src="../../assets/trello.png">
+      <span class="bor">Boards</span></span></div>
+  <div class="search">
+    <mat-icon class="icon">search</mat-icon>
+    <input class="searchbar" type=text>
 
-    </div>
-    <img class="centericon" src="../../assets/trello-logo-white.svg">
-    <span class="a">
-        <mat-icon class="user">person</mat-icon>
-    </span>
-</div>
-
-<div class="contain">
-    <mat-card class="form">
-      <mat-card-header>
-        <mat-card-title>
-          <input matInput placeholder="Add list title" name="title">
-        </mat-card-title>
-      </mat-card-header>
-      <div cdkDropList #cardlist="cdkDropList" [cdkDropListData]="cards" [cdkDropListConnectedTo]="[cardlist]"
-        (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let card of cards" cdkDrag>
-          <mat-card class="smallcard">{{card}} <mat-icon class="edit" (click)="editCard(card)">edit</mat-icon>
-          </mat-card>
-        </div>
-      </div>
-      <button class="button" mat-button color="accent" (click)="toggle()">
-        <mat-icon class="add">add</mat-icon>{{condition ? 'Add another card' : 'close'}}
-      </button>
-      <form #f="ngForm" *ngIf="!showNewtext">
-        <mat-form-field class="textarea">
-          <textarea matInput [(ngModel)]="card" placeholder="Enter a title for this card..." name="name"></textarea>
-        </mat-form-field>
-        <button class="button" type="reset" mat-raised-button color="accent" [disabled]= !card (click)="addcard(card)">addcard</button>
-      </form>
-    </mat-card>
   </div>
+  <img class="centericon" src="../../assets/trello-logo-white.svg">
+  <span class="a">
+    <button mat-button color="accent" (click)="Onlogout()">Logout</button>
+  </span>
+</div>
+<!-- <app-form></app-form> -->
+<app-board></app-board>
