@@ -5,13 +5,13 @@
           <input matInput placeholder="Add list title" name="title">
         </mat-card-title>
       </mat-card-header>
-      <!-- <div cdkDropList #cardlist="cdkDropList" [cdkDropListData]="cards" [cdkDropListConnectedTo]="[cardlist]"
-        (cdkDropListDropped)="drop($event)"> -->
+      <div cdkDropList #cardlist="cdkDropList" [cdkDropListData]="Cards" [cdkDropListConnectedTo]="[cardlist]"
+        (cdkDropListDropped)="drop($event)">
         <div *ngFor="let f of Cards">
-          <mat-card class="smallcard">{{f.card}} <mat-icon class="delete" (click)="deletecard(f)">delete</mat-icon>
+          <mat-card class="smallcard" cdkDrag>{{f.card}} <mat-icon class="delete" (click)="deletecard(f)">delete</mat-icon>
           </mat-card>
         </div>
-      <!-- </div> -->
+      </div>
       <button class="button" mat-button color="accent" (click)="toggle()">
         <mat-icon class="add">add</mat-icon>{{condition ? 'Add another card' : 'close'}}
       </button>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
 
@@ -31,12 +31,16 @@ export class FormComponent implements OnInit {
     this.showNewtext= !this.showNewtext;
   }
 
-  // drop(event: CdkDragDrop<string[]>){
-  //   if(event.previousContainer === event.container){
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //     console.log("dragged");
-  //   }
+  drop(event: CdkDragDrop<string[]>){
+  if(event.previousContainer === event.container){
+    moveItemInArray(this.Cards, event.previousIndex, event.currentIndex);
+    console.log("form dragged");
   // }
+  //   else{
+  //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+  //   console.log("hidragged");
+  }
+  }
 
     AddCard(formData : NgForm){
        this.Userservice.StoreCards(formData.value).subscribe(
