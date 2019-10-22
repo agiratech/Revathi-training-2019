@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-form',
@@ -21,6 +22,8 @@ export class FormComponent implements OnInit {
 
   constructor( private Userservice : UserService) { 
    this.Cards = this.Userservice.displayCard();
+    // var cardRef = firebase.database().ref('/reva');
+   
   }
 
   ngOnInit() {
@@ -32,15 +35,19 @@ export class FormComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>){
-  if(event.previousContainer === event.container){
+  // if(event.previousContainer === event.container){
     moveItemInArray(this.Cards, event.previousIndex, event.currentIndex);
     console.log("form dragged");
   // }
   //   else{
   //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
   //   console.log("hidragged");
+  // }
   }
-  }
+
+  //  addCard(formData : NgForm){
+  //  }
+
 
     AddCard(formData : NgForm){
        this.Userservice.StoreCards(formData.value).subscribe(

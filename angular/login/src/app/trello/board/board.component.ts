@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BoardComponent implements OnInit {
   Boards;
-  forms={ Board:""};
+  // forms={ Board:""};
 
 
   constructor( private Userservice : UserService) {
@@ -20,13 +20,13 @@ export class BoardComponent implements OnInit {
   }
 
   addBoards(form : NgForm){
-    this.Userservice.StoreBoards(form.value).subscribe(
-      res => { this.Userservice.AddBoardArray(res['Board']);
-        console.log(res);
-      },
-      (error) => console.log(error));
+    // this.Userservice.StoreBoards(form.value).subscribe(
+    //   res => { this.Userservice.AddBoardArray(res['Board']);
+    //     console.log(res);
+    //   },
+    //   (error) => console.log(error));
    
-    // this.forms.push(form);
+    this.Boards.push(form);
 
 
 }
