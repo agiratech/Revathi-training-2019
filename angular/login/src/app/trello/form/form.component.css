@@ -15,6 +15,16 @@
     word-break: break-all;
     cursor: pointer;
 }
+.position{
+float: right;
+}
+
+.position:hover{
+    background-color:#b8ccdd;
+    color:black;
+    opacity: .5;
+
+}
 
 .button{
     margin: 10px;

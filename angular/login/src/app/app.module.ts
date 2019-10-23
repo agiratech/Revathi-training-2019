@@ -20,16 +20,6 @@ import { MatCardModule } from '@angular/material/card';
 import { FormComponent } from './trello/form/form.component';
 import { BoardComponent } from './trello/board/board.component';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCAG_WyXPanyU8pSxgyxa8slILftmtzA3c",
-  authDomain: "cards-9b5d4.firebaseapp.com",
-  databaseURL: "https://cards-9b5d4.firebaseio.com",
-  projectId: "cards-9b5d4",
-  storageBucket: "cards-9b5d4.appspot.com",
-  messagingSenderId: "28237824707",
-  appId: "1:28237824707:web:cadb14b0d1ddb35f5dd876",
-  measurementId: "G-FF91PBKS94"
-};
 
 @NgModule({
   declarations: [

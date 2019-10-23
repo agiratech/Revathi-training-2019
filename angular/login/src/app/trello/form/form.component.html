@@ -1,9 +1,8 @@
 <div class="contain">
     <mat-card class="form">
       <mat-card-header>
-        <mat-card-title>
           <input matInput placeholder="Add list title" name="title">
-        </mat-card-title>
+          <mat-icon class="position" (click)="positionChange()">swap_vert</mat-icon>
       </mat-card-header>
       <div cdkDropList #cardlist="cdkDropList" [cdkDropListData]="Cards" [cdkDropListConnectedTo]="[cardlist]"
         (cdkDropListDropped)="drop($event)">
