@@ -69,11 +69,11 @@ export class UserService {
   // }
 
   StoreCards(formData) {
-    return this.http.post('https://cards-9b5d4.firebaseio.com/reva.json', formData);
+    return this.http.post('https://cards-9b5d4.firebaseio.com/reva/cards.json', formData);
   }
 
   AddcardArray(id) {
-    this.http.get('https://cards-9b5d4.firebaseio.com/reva/' + id + '.json').subscribe(
+    this.http.get('https://cards-9b5d4.firebaseio.com/reva/cards' + id + '.json').subscribe(
       res => {
         //  var childRef =childRef.child(id).push({ 'card': res['card'], 'id': id})
         this.Cards.push({ 'card': res['card'], 'id': id })
@@ -83,7 +83,7 @@ export class UserService {
 
   displayCard() {
     let data = []
-    this.http.get('https://cards-9b5d4.firebaseio.com/reva.json').subscribe(res => {
+    this.http.get('https://cards-9b5d4.firebaseio.com/reva/cards.json').subscribe(res => {
       Object.keys(res).forEach(function (key) {
         data.push({ id: key, 'card': res[key]['card'] })
         console.log(res);
@@ -93,7 +93,7 @@ export class UserService {
   }
 
   deleteCard(id) {
-    return this.http.delete('https://cards-9b5d4.firebaseio.com/reva/' + id + '.json');
+    return this.http.delete('https://cards-9b5d4.firebaseio.com/reva/cards' + id + '.json');
   }
 
   logout() {
@@ -113,7 +113,7 @@ export class UserService {
       res => {
         this.Boards.push({ 'Board': res['Board'], 'id': id })
         console.log(this.Boards, "board");
-      }); 863720041950717
+      });
   }
   displayBoards() {
     let dataBoard = []

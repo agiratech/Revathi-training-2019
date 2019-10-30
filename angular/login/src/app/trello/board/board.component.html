@@ -1,11 +1,11 @@
 <!-- <div class="container" cdkDropList #formlist="cdkDropList" [cdkDropListData]="forms" 
     [cdkDropListConnectedTo]="[formlist]" (cdkDropListDropped)="drop($event)">-->
-    <form class="container" #f="ngForm" (submit)="addBoards(f)">
-        <div *ngFor="let Board of Boards">
-        <app-form  [formcard]="Board"></app-form>
-        </div>
-        <button mat-button>
-            <mat-icon>add</mat-icon>Add another List
-        </button>
-    </form>
+<form class="container" #f="ngForm" (submit)="addBoards(f)">
+    <div *ngFor="let Board of Boards">
+        <app-form [formcard]="Board"></app-form>
+    </div>
+    <button mat-button>
+        <mat-icon>add</mat-icon>Add another List
+    </button>
+</form>
 <!-- </div> -->

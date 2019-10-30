@@ -8,9 +8,9 @@ import {
   MatButtonModule, MatIconModule, MatInputModule,
   MatDialogModule,
   MatExpansionModule
-} from '@angular/material';import { SigninComponent } from './signin/signin.component';
+} from '@angular/material'; import { SigninComponent } from './signin/signin.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 import { SignupComponent } from './signup/signup.component';
 import { LayoutComponent } from './layout/layout.component';

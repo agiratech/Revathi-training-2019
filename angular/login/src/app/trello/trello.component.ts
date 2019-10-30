@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
 
 
@@ -10,13 +10,13 @@ import { UserService } from '../user.service';
 })
 export class TrelloComponent implements OnInit {
 
-  constructor( private Userservice: UserService ) { 
+  constructor(private Userservice: UserService) {
   }
 
   ngOnInit() {
   }
-    
-  Onlogout(){
+
+  Onlogout() {
     this.Userservice.logout();
-}
+  }
 }

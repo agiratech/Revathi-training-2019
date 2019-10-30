@@ -11,61 +11,62 @@ import { NgForm } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   Cards;
-  forms={ card:""};
+  forms = { card: "" };
   delete;
-  condition : boolean = true;
-  showNewtext : boolean = true;
+  condition: boolean = true;
+  showNewtext: boolean = true;
 
   @Input() formcard;
 
 
-  constructor( private Userservice : UserService) { 
-   this.Cards = this.Userservice.displayCard();
+  constructor(private Userservice: UserService) {
+    this.Cards = this.Userservice.displayCard();
     // var cardRef = firebase.database().ref('/reva');
   }
 
   ngOnInit() {
   }
 
-  toggle(){
+  toggle() {
     this.condition = !this.condition;
-    this.showNewtext= !this.showNewtext;
+    this.showNewtext = !this.showNewtext;
   }
 
-  positionChange(){
+  positionChange() {
     this.Cards.reverse();
   }
 
-  drop(event: CdkDragDrop<string[]>){
-  // if(event.previousContainer === event.container){
-   moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  // }
-  //   else{
-  //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-  //   console.log("hidragged");
-  // }
+  drop(event: CdkDragDrop<string[]>) {
+    // if(event.previousContainer === event.container){
+    moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    // }
+    //   else{
+    //   transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+    //   console.log("hidragged");
+    // }
   }
 
   //  addCard(formData : NgForm){
   //  }
 
 
-    AddCard(formData : NgForm){
-       this.Userservice.StoreCards(formData.value).subscribe(
-         res =>{ this.Userservice.AddcardArray(res['card']);
-         console.log(res);
-        },
-        (error)=>console.log(error));
-        formData.reset();
+  AddCard(formData: NgForm) {
+    this.Userservice.StoreCards(formData.value).subscribe(
+      res => {
+        this.Userservice.AddcardArray(res['card']);
+        console.log(res);
+      },
+      (error) => console.log(error));
+    formData.reset();
+  }
+
+  deletecard(card) {
+    const index: number = this.Cards.indexOf(card);
+    if (index !== -1) {
+      this.delete = this.Cards.splice(index, 1);
+      this.Userservice.deleteCard(card.id).subscribe(
+        res => { console.log("delete") });
     }
-   
-    deletecard(card){
-      const index:number = this.Cards.indexOf(card);
-      if(index !== -1){
-        this.delete = this.Cards.splice(index, 1);
-        this.Userservice.deleteCard(card.id).subscribe(
-          res => { console.log("delete")});
-      }
-    }
-   
+  }
+
 }
