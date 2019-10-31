@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { NgForm } from '@angular/forms';
 
@@ -9,27 +9,32 @@ import { NgForm } from '@angular/forms';
 })
 export class BoardComponent implements OnInit {
   Boards;
-  forms={ Board:""};
+  forms = { Board: "" };
+  condition: boolean = true;
+  showNewtext: boolean = true;
 
+  @Input() board;
 
-  constructor( private Userservice : UserService) {
+  constructor(private Userservice: UserService) {
     this.Boards = this.Userservice.displayBoards();
   }
 
   ngOnInit() {
   }
 
-  addBoards(form : NgForm){
+  toggle() {
+    this.condition = !this.condition;
+    this.showNewtext = !this.showNewtext;
+  }
+
+  addBoards(form: NgForm) {
     this.Userservice.StoreBoards(form.value).subscribe(
-      res => { this.Userservice.AddBoardArray(res['Board']);
+      res => {
+       this.Userservice.AddBoardArray(res['Board']);
         console.log(res);
       },
       (error) => console.log(error));
-   
+
     // this.Boards.push(form);
-
-
-}
-
-
+  }
 }

@@ -19,6 +19,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
 import { FormComponent } from './trello/form/form.component';
 import { BoardComponent } from './trello/board/board.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { BoardComponent } from './trello/board/board.component';
     TrelloComponent,
     FormComponent,
     BoardComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

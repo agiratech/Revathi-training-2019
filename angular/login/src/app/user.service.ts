@@ -78,6 +78,11 @@ export class UserService {
         //  var childRef =childRef.child(id).push({ 'card': res['card'], 'id': id})
         this.Cards.push({ 'card': res['card'], 'id': id })
         console.log(this.Cards);
+        // console.log(id);
+    // var data = fire.database().ref('reva').child('board').push().key;
+    // var update = [];
+    // update['/board/' + id + '/' + data];
+    // return fire.database().ref().update(update);
       });
   }
 
@@ -85,7 +90,7 @@ export class UserService {
     let data = []
     this.http.get('https://cards-9b5d4.firebaseio.com/reva/cards.json').subscribe(res => {
       Object.keys(res).forEach(function (key) {
-        data.push({ id: key, 'card': res[key]['card'] })
+        data.push({id:key, 'card': res[key]['card'] })
         console.log(res);
       })
     });
@@ -109,7 +114,7 @@ export class UserService {
   }
 
   AddBoardArray(id) {
-    this.http.get('https://cards-9b5d4.firebaseio.com/reva/' + id + '.json').subscribe(
+    this.http.get('https://cards-9b5d4.firebaseio.com/reva' + id + '.json').subscribe(
       res => {
         this.Boards.push({ 'Board': res['Board'], 'id': id })
         console.log(this.Boards, "board");
@@ -119,12 +124,10 @@ export class UserService {
     let dataBoard = []
     this.http.get('https://cards-9b5d4.firebaseio.com/reva.json').subscribe(res => {
       Object.keys(res).forEach(function (key) {
-        dataBoard.push({ id: key, 'Board': res[key]['Board'] })
-        console.log(dataBoard);
-        console.log(key);
+        dataBoard.push({id: key, 'Board': res[key]['Board'] })
         console.log(res);
       })
-    })
+    });
     return dataBoard;
   }
 }

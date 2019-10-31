@@ -1,11 +1,26 @@
 <!-- <div class="container" cdkDropList #formlist="cdkDropList" [cdkDropListData]="forms" 
-    [cdkDropListConnectedTo]="[formlist]" (cdkDropListDropped)="drop($event)">-->
-<form class="container" #f="ngForm" (submit)="addBoards(f)">
+  
+  [cdkDropListConnectedTo]="[formlist]" (cdkDropListDropped)="drop($event)">-->
+<div class="container">
     <div *ngFor="let Board of Boards">
         <app-form [formcard]="Board"></app-form>
     </div>
-    <button mat-button>
+
+    <!-- <form class="container" #f="ngForm" (submit)="addBoards(f)">
+          <button mat-button>
         <mat-icon>add</mat-icon>Add another List
     </button>
-</form>
-<!-- </div> -->
+</form> -->
+    <!-- </div> -->
+    <div class="form">
+        <button *ngIf="showNewtext" class="button" mat-button color="accent" (click)="toggle()">
+            <mat-icon class="add">add</mat-icon>{{condition ? 'Add another List' : 'close'}}
+        </button>
+        <form #f="ngForm" *ngIf="!showNewtext" (submit)="addBoards(f)">
+            <mat-form-field class="textarea">
+                <input class="input" matInput [(ngModel)]="board" placeholder="Enter list title..." name="board">
+            </mat-form-field>
+            <button class="button" type="submit" mat-raised-button color="accent" [disabled]=!board>Add List</button>
+        </form>
+    </div>
+</div>

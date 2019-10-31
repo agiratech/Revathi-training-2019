@@ -1,0 +1,66 @@
+.contain{
+    display:flex;
+    flex-direction: row;
+}
+.form{
+    width:300px;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(34, 52, 68);
+    cursor: pointer;
+}
+.smallcard{
+    margin:10px;
+    word-break: break-all;
+    cursor: pointer;
+}
+.position{
+float: right;
+}
+
+.position:hover{
+    background-color:#b8ccdd;
+    color:black;
+    opacity: .5;
+
+}
+
+.button{
+    margin: 10px;
+    width:90%;
+}
+
+.delete{
+    float:right;
+    opacity:0;
+    cursor: pointer;
+    color:black;
+}
+
+.smallcard:hover{
+    background-color: #d1e6f9 ;
+    color:black;
+}
+.smallcard:hover .delete{
+    opacity:.4;
+}
+
+.delete:hover{
+    background-color:#b8ccdd;
+}
+
+.textarea{
+    width:90%;
+}
+.container{
+    display:flex;
+    flex-direction:row;
+}
+.formboard{
+    width:300px;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(34, 52, 68);
+    cursor: pointer;
+    height:120px;
+}
