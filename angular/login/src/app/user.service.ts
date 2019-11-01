@@ -9,11 +9,11 @@ import 'firebase/database';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   constructor(private router: Router, private http: HttpClient) {
     // var cardref = fire.database().ref("/reva")
-
   }
   Cards = [];
   Boards = [];
@@ -62,11 +62,13 @@ export class UserService {
     return this.token! = null;
   }
 
-
-  // ChangePosition(){
-  //   this.Cards.reverse();
-  //   return this.http.
-  // }
+  logout() {
+    fire.auth().signOut().then(
+      response => {
+        this.router.navigate(['/']);
+        this.token = null;
+      });
+  }
 
   StoreCards(formData) {
     return this.http.post('https://cards-9b5d4.firebaseio.com/reva/cards.json', formData);
@@ -75,7 +77,6 @@ export class UserService {
   AddcardArray(id) {
     this.http.get('https://cards-9b5d4.firebaseio.com/reva/cards' + id + '.json').subscribe(
       res => {
-        //  var childRef =childRef.child(id).push({ 'card': res['card'], 'id': id})
         this.Cards.push({ 'card': res['card'], 'id': id })
         console.log(this.Cards);
         // console.log(id);
@@ -101,13 +102,7 @@ export class UserService {
     return this.http.delete('https://cards-9b5d4.firebaseio.com/reva/cards' + id + '.json');
   }
 
-  logout() {
-    fire.auth().signOut().then(
-      response => {
-        this.router.navigate(['/']);
-        this.token = null;
-      });
-  }
+  
 
   StoreBoards(formData) {
     return this.http.post('https://cards-9b5d4.firebaseio.com/reva.json', formData);
@@ -126,6 +121,7 @@ export class UserService {
       Object.keys(res).forEach(function (key) {
         dataBoard.push({id: key, 'Board': res[key]['Board'] })
         console.log(res);
+        // fire.database().ref().update(dataBoard);
       })
     });
     return dataBoard;

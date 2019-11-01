@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { NgForm } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-board',
@@ -34,7 +36,9 @@ export class BoardComponent implements OnInit {
         console.log(res);
       },
       (error) => console.log(error));
-
     // this.Boards.push(form);
+
+      //  let data = Object.assign({}, form.value);
+      //  this.firestore.collection('reva').add(data);
   }
 }
